@@ -5,89 +5,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MiniLuck</title>
+  <script src="https://cdn.jsdelivr.net/npm/hammerjs"></script>
 
 
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #000;
-    }
-
-    #toTop {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #007bff;
-      color: #fff;
-      font-size: 20px;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
-      cursor: pointer;
+      height: 100vh;
+      margin: 0;
     }
 
-    .draggable {
+    .draggable-button {
+      cursor: grab;
       user-select: none;
+      position: absolute;
+      width: 150px;
+      height: 50px;
+      background-color: #3498db;
+      border: 1px solid #2980b9;
+      border-radius: 5px;
+      text-align: center;
+      line-height: 50px;
+      color: #fff;
     }
 
-    .imgtotp {
-      width: 150px;
+    button {
+      background: none;
+      border: none;
+      color: inherit;
+      font: inherit;
+      cursor: inherit;
+      outline: inherit;
     }
   </style>
 </head>
 
 <body>
-  <div id="toTop" class="draggable">
-    <img class="imgtotp"
-      src="https://images.vexels.com/media/users/3/185202/isolated/preview/04210f166dee214fc751791106b453b2-donut-pink-syrup-icon.png"
-      alt="">
+  <div class="draggable-button" id="drag-button">
+    <button id="button">ลากฉัน</button>
   </div>
   <script>
-    // const toTop = document.getElementById('toTop');
+    const dragButton = document.getElementById("drag-button");
 
-    // let isDragging = false;
-    // let offsetX, offsetY;
+    let isDragging = false;
+    let offsetX, offsetY;
 
-    // toTop.addEventListener('mousedown', (e) => {
-    //   isDragging = true;
-    //   const { left, top } = toTop.getBoundingClientRect();
-    //   offsetX = e.clientX - left;
-    //   offsetY = e.clientY - top;
-    // });
-
-    // document.addEventListener('mousemove', (e) => {
-    //   if (!isDragging) return;
-    //   toTop.style.left = e.clientX - offsetX + 'px';
-    //   toTop.style.top = e.clientY - offsetY + 'px';
-    // });
-
-    // document.addEventListener('mouseup', () => {
-    //   isDragging = false;
-    // });
-    const toTop = document.getElementById('toTop');
-
-    toTop.addEventListener('dragstart', (e) => {
-      e.dataTransfer.setData('text/plain', ''); // ต้องระบุตัวแปรข้อมูลโดยทึบเป็นสตริงเปล่า
+    dragButton.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      offsetX = e.clientX - dragButton.getBoundingClientRect().left;
+      offsetY = e.clientY - dragButton.getBoundingClientRect().top;
+      dragButton.style.cursor = "grabbing";
     });
 
-    toTop.addEventListener('dragover', (e) => {
-      e.preventDefault(); // ต้องยกเลิกการดำเนินการเริ่มต้นที่อนุญาตให้วางลง
+    document.addEventListener("mousemove", (e) => {
+      if (isDragging) {
+        const x = e.clientX - offsetX;
+        const y = e.clientY - offsetY;
+        dragButton.style.transform = `translate(${x}px, ${y}px)`;
+      }
     });
 
-    toTop.addEventListener('drop', (e) => {
-      e.preventDefault();
-      const { clientX, clientY } = e;
-      toTop.style.left = clientX - toTop.offsetWidth / 2 + 'px';
-      toTop.style.top = clientY - toTop.offsetHeight / 2 + 'px';
+    document.addEventListener("mouseup", () => {
+      if (isDragging) {
+        isDragging = false;
+        dragButton.style.cursor = "grab";
+      }
     });
-
-
   </script>
 
 </body>
