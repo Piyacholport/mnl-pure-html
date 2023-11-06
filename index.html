@@ -29,6 +29,10 @@
       text-align: center;
       line-height: 50px;
       color: #fff;
+      left: 50px;
+      /* ตำแหน่งเริ่มต้นในแกน X */
+      top: 50px;
+      /* ตำแหน่งเริ่มต้นในแกน Y */
     }
 
     button {
@@ -47,10 +51,73 @@
     <button id="button">ลากฉัน</button>
   </div>
   <script>
+    // const dragButton = document.getElementById("drag-button");
+
+    // let isDragging = false;
+    // let offsetX, offsetY;
+
+    // dragButton.addEventListener("mousedown", (e) => {
+    //   isDragging = true;
+    //   offsetX = e.clientX - dragButton.getBoundingClientRect().left;
+    //   offsetY = e.clientY - dragButton.getBoundingClientRect().top;
+    //   dragButton.style.cursor = "grabbing";
+    // });
+
+    // document.addEventListener("mousemove", (e) => {
+    //   if (isDragging) {
+    //     const x = e.clientX - offsetX;
+    //     const y = e.clientY - offsetY;
+    //     dragButton.style.transform = `translate(${x}px, ${y}px)`;
+    //   }
+    // });
+
+    // document.addEventListener("mouseup", () => {
+    //   if (isDragging) {
+    //     isDragging = false;
+    //     dragButton.style.cursor = "grab";
+    //   }
+    // });
+
+
+    // const dragButton = document.getElementById("drag-button");
+
+    // let isDragging = false;
+    // let offsetX, offsetY;
+
+    // dragButton.addEventListener("mousedown", (e) => {
+    //   isDragging = true;
+    //   offsetX = e.clientX - dragButton.getBoundingClientRect().left;
+    //   offsetY = e.clientY - dragButton.getBoundingClientRect().top;
+    //   dragButton.style.cursor = "grabbing";
+    // });
+
+    // document.addEventListener("mousemove", (e) => {
+    //   if (isDragging) {
+    //     const x = e.clientX - offsetX;
+    //     const y = e.clientY - offsetY;
+    //     dragButton.style.transform = `translate(${x}px, ${y}px)`;
+    //   }
+    // });
+
+    // document.addEventListener("mouseup", () => {
+    //   if (isDragging) {
+    //     isDragging = false;
+    //     dragButton.style.cursor = "grab";
+    //   }
+    // });
+
     const dragButton = document.getElementById("drag-button");
 
     let isDragging = false;
     let offsetX, offsetY;
+
+    // ตำแหน่งเริ่มต้นในแกน X และ Y
+    const initialX = 50;
+    const initialY = 50;
+
+    // ตั้งค่าเริ่มต้น
+    dragButton.style.left = `${initialX}px`;
+    dragButton.style.top = `${initialY}px`;
 
     dragButton.addEventListener("mousedown", (e) => {
       isDragging = true;
@@ -73,6 +140,7 @@
         dragButton.style.cursor = "grab";
       }
     });
+
   </script>
 
 </body>
