@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniLuck</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./assets/css/navbar.css">
+  <link rel="stylesheet" href="./assets/css/preload.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+
+            orangect: "#f59c22",
+            yellowct: "#fde60c",
+            greenct: "#0b926c",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .section1 {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .video-home {
+      width: 100%;
+      z-index: 2;
+
+      display: block;
+      top: 0;
+      left: 0;
+    }
+
+    video {
+      object-fit: contain;
+      overflow-clip-margin: content-box;
+      overflow: clip;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navmenu">
+    <!--- Your content goes here -->
+    <nav class="bg-white shadow-md fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="./index.html" class="flex items-center">
+          <img src="./assets/img/newlogo.gif" class="h-10" alt="Flowbite Logo">
+
+        </a>
+        <div class="flex md:order-2">
+          <button
+            class="transform hover:scale-105 transition duration-300 ease-in-out text-white bg-emerald-500 rounded-full text-sm px-3 py-3 dark:bg-emerald-500 dark:hover:bg-emerald-600 focus:outline-none dark:focus:ring-emerald-700"
+            type="button" data-drawer-target="drawer-right-example" data-drawer-show="drawer-right-example"
+            data-drawer-placement="right" aria-controls="drawer-right-example">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-align-right">
+              <line x1="21" x2="3" y1="6" y2="6" />
+              <line x1="21" x2="9" y1="12" y2="12" />
+              <line x1="21" x2="7" y1="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+        <div class="items-center justify-between hidden w-full lg:flex md:w-auto md:order-1" id="navbar-sticky">
+          <ul
+            class="flex items-center flex-col  font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <li>
+              <a href="#"
+                class="transform hover:scale-105 transition duration-300 ease-in-out block py-2 pl-3 pr-4  rounded  md:text-emerald-500 md:p-0 md:dark:text-emerald-500 dark:bg-emerald-500 md:dark:bg-transparent"
+                aria-current="page">Home</a>
+            </li>
+            <li>
+              <a href="./aboutus.html"
+                class="transform hover:scale-105 transition duration-300 ease-in-out block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-emerald-400 md:p-0 dark:text-white md:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                About Us</a>
+            </li>
+            <li>
+              <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                class="transform hover:scale-105 transition duration-300 ease-in-out flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-emerald-400 md:p-0 md:w-auto dark:text-white md:dark:hover:text-emerald-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                Games
+                <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m1 1 4 4 4-4" />
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div id="dropdownNavbar"
+                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="./games.html"
+                      class="transform hover:scale-105 transition duration-300 ease-in-out block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">All
+                      games</a>
+                  </li>
+                  <li>
+                    <a href="./videoslot.html"
+                      class="transform hover:scale-105 transition duration-300 ease-in-out block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Video
+                      Slot</a>
+                  </li>
+                  <li>
+                    <a href="./instant.html"
+                      class="transform hover:scale-105 transition duration-300 ease-in-out block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Instant
+                      Games</a>
+                  </li>
+                  <li>
+                    <a href="./classics.html"
+                      class="transform hover:scale-105 transition duration-300 ease-in-out block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Classics
+                      Games</a>
+                  </li>
+                  <li>
+                    <a href="./tablegames.html"
+                      class="transform hover:scale-105 transition duration-300 ease-in-out block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Table
+                      Games</a>
+                  </li>
+                  <li>
+                    <a href="./bonusbgames.html"
+                      class="transform hover:scale-105 transition duration-300 ease-in-out block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bounus
+                      buy Games</a>
+                  </li>
+                  <li>
+                    <a href="./jackpot.html"
+                      class="transform hover:scale-105 transition duration-300 ease-in-out block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      Jackpot Games</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="./promotools.html"
+                class="transform hover:scale-105 transition duration-300 ease-in-out block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-emerald-400 md:p-0 dark:text-white md:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Promo
+                Tools</a>
+            </li>
+            <li>
+              <a href="#"
+                class="transform hover:scale-105 transition duration-300 ease-in-out block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-emerald-400 md:p-0 dark:text-white md:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Partnerships</a>
+            </li>
+
+            <li>
+              <a href="#"
+                class="transform hover:scale-105 transition duration-300 ease-in-out block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-emerald-400 md:p-0 dark:text-white md:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">News
+                & Events</a>
+            </li>
+            <li>
+              <a href="#"
+                class="transform hover:scale-105 transition duration-300 ease-in-out block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-emerald-400 md:p-0 dark:text-white md:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact
+                Us</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- drawer component -->
+    <div id="drawer-right-example"
+      class="fixed p-4 top-0 right-0 z-40 h-screen  overflow-y-auto transition-transform translate-x-full bg-white w-[80vw] md:w-[50vw] dark:bg-gray-800"
+      tabindex="-1" aria-labelledby="drawer-right-label">
+      <!-- mobile & ipad-->
+      <div class="lg:hidden">
+        <h5 id=" drawer-right-label"
+          class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"><svg
+            class="w-4 h-4 mr-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+            viewBox="0 0 20 20">
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+          </svg>Menu</h5>
+      </div>
+      <!-- PC -->
+      <div class="lg:block hidden ">
+        <h5 id=" drawer-right-label"
+          class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"><svg
+            class="w-4 h-4 mr-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+            viewBox="0 0 20 20">
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+          </svg>Licenses and Local certificates</h5>
+      </div>
+      <button type="button" data-drawer-hide="drawer-right-example" aria-controls="drawer-right-example"
+        class="transform hover:scale-105 transition duration-300 ease-in-out text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
+        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+        </svg>
+        <span class="sr-only">Close menu</span>
+      </button>
+      <!-- mobile & ipad menu-->
+      <div class="lg:hidden">
+        <div class="mt-5">
+          <ul>
+            <li class="py-3 px-3  border-b border-gray-100 hover:text-emerald-500 text-emerald-500 font-bold"> <a
+                class="" href="./index.html">Home</a></li>
+            <li class="py-3 px-3 font-medium border-b border-gray-100 hover:text-emerald-500"> <a class=""
+                href="./aboutus.html">About Us</a></li>
+            <li class="py-3 px-3 font-medium border-b border-gray-100 hover:text-emerald-500">
+
+              <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
+                class="transform hover:scale-105 transition duration-300 ease-in-out font-medium text-center inline-flex items-center "
+                type="button">Games <svg class="w-2.5 h-2.5 ml-2.5" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m1 1 4 4 4-4" />
+                </svg></button>
+              <!-- Dropdown menu -->
+              <div id="dropdown"
+                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+
+                  <li>
+                    <a href="./games.html"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">All
+                      games</a>
+                  </li>
+                  <li>
+                    <a href="./videoslot.html"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Video
+                      Slot</a>
+                  </li>
+                  <li>
+                    <a href="./instant.html"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Instant
+                      Games</a>
+                  </li>
+                  <li>
+                    <a href="./classics.html"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Classics
+                      Games</a>
+                  </li>
+                  <li>
+                    <a href="./tablegames.html"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Table
+                      Games</a>
+                  </li>
+                  <li>
+                    <a href="./bonusbgames.html"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bounus
+                      buy Games</a>
+                  </li>
+                  <li>
+                    <a href="./jackpot.html"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      Jackpot Games</a>
+                  </li>
+
+                </ul>
+              </div>
+
+            </li>
+            <li class="py-3 px-3 font-medium border-b border-gray-100 hover:text-emerald-500"> <a class=""
+                href="./promotools.html">Promo Tools</a></li>
+            <li class="py-3 px-3 font-medium border-b border-gray-100 hover:text-emerald-500"> <a class=""
+                href="./partnerships.html">Partnerships</a></li>
+            <li class="py-3 px-3 font-medium border-b border-gray-100 hover:text-emerald-500"> <a class=""
+                href="./newsevent.html">News & Events</a></li>
+            <li class="py-3 px-3 font-medium border-b border-gray-100 hover:text-emerald-500"> <a class=""
+                href="./contactus.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- button drawer hidden -->
+      <div class="text-center">
+        <button
+          class="hidden text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          type="button" data-drawer-target="drawer-swipe" data-drawer-show="drawer-swipe" data-drawer-placement="bottom"
+          data-drawer-edge="true" data-drawer-edge-offset="bottom-[60px]" aria-controls="drawer-swipe">
+          Show swipeable drawer
+        </button>
+      </div>
+
+      <!-- drawer component -->
+      <div id="drawer-swipe"
+        class="lg:hidden fixed z-40 md:w-[50vw] w-[80vw] md:left-[50vw] left-[20vw] right-0 overflow-y-auto bg-white border-t border-gray-200 rounded-t-lg dark:border-gray-700 dark:bg-gray-800 transition-transform bottom-0  translate-y-full bottom-[60px]"
+        tabindex="-1" aria-labelledby="drawer-swipe-label">
+        <div class="p-4 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700" data-drawer-toggle="drawer-swipe">
+          <span class="absolute w-8 h-1 -translate-x-1/2 bg-gray-300 rounded-lg top-3 left-1/2 dark:bg-gray-600"></span>
+          <h5 id="drawer-swipe-label"
+            class="inline-flex items-center text-base text-gray-500 dark:text-gray-400 font-medium"><svg
+              class="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+              viewBox="0 0 18 18">
+              <path
+                d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10ZM17 13h-2v-2a1 1 0 0 0-2 0v2h-2a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 0-2Z" />
+            </svg>Licenses and Local certificates</h5>
+        </div>
+        <!-- pc -->
+        <div class="lg:hidden overflow-y-auto h-[80vh] px-3">
+          <div class="a-menu mt-5">
+            <p>Licenses and Local certificates</p>
+            <p class="sub-a-menu mt-3">
+              Evoplay Entertainment™ holds a Curacao gaming license in addition to local gaming
+              certificates, and complies with all European regulatory requirements.
+            </p>
+            <div class="flex-nav items-center justify-left mt-5">
+              <div class="">
+                <img class=" w-12 px-3"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/curasao.png?2" alt="" />
+              </div>
+              <div class="">
+                <img class="w-12 px-3" src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/ecogra.png"
+                  alt="" />
+              </div>
+              <div class="">
+                <img class="w-12 px-3"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/iso-b-13.svg" alt="" />
+              </div>
+            </div>
+          </div>
+
+          <div class="a-menu lg:mt-5">
+            <br />
+            <p>Awards & Nominations</p>
+            <p class="sub-a-menu lg:mt-5">
+              No stranger to industry awards, Evoplay has been nominated, shortlisted and picked up wins
+              since we started in 2017. From awards giants SBC and ERG, to G2E Asia and the Spinnovation
+              Summit, Evoplay always makes the headlines.
+            </p>
+          </div>
+
+          <div class="flex-nav items-center justify-left mt-5">
+            <div class="">
+              <img class=" w-12 px-3"
+                src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/curasao.png?2" alt="" />
+            </div>
+            <div class="">
+              <img class="w-12 px-3" src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/ecogra.png"
+                alt="" />
+            </div>
+            <div class="">
+              <img class="w-12 px-3" src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/iso-b-13.svg"
+                alt="" />
+            </div>
+          </div>
+          <div class="flex-nav items-center justify-left mt-5">
+            <div class="">
+              <img class=" w-12 px-3"
+                src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/curasao.png?2" alt="" />
+            </div>
+          </div>
+
+          <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+
+            <div class="">
+              <br />
+              <div class="flex">
+                Responsible gaming
+                <img class="img-flex-menu w-12"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/18_plus.svg" alt="" />
+              </div>
+              <p class="sub-a-menu mt-3">
+                Evoplay Entertainment™ takes social responsibility very seriously. To enter the
+                company's website and play a game demo, you must first confirm that you are of a legal
+                gambling age in your country.
+              </p>
+            </div>
+            <div>
+
+              <br />
+              <div class="flex">
+                Awards & Nominations
+                <img class="img-flex-menu w-12"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/copyright-ico.svg" alt="" />
+              </div>
+              <p class="sub-a-menu mt-3">
+                Evoplay Entertainment™ has numerous European-issued patent certificates and will
+                protect its intellectual property if said property and patents are infringed.
+              </p>
+
+            </div>
+
+            <div class=" lg:mt-5">
+              <br />
+              <div class="flex mb-5">
+                Responsible gaming
+                <img class="img-flex-menu w-12"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/18_plus.svg" alt="" />
+              </div>
+              <form>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="mb-3">
+
+                    <input type="text" id="default-input" placeholder="First name"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  </div>
+                  <div class="mb-3">
+
+                    <input type="text" id="default-input" placeholder="Last name"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  </div>
+                </div>
+                <div class=" grid grid-cols-1 gap-4">
+                  <div class="">
+                    <div class="relative ">
+                      <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                          <path
+                            d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+                          <path
+                            d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+                        </svg>
+                      </div>
+                      <input type="text" id="input-group-1"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="name@example.com">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <textarea id="message" rows="4"
+                      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="Your Message..."></textarea>
+                  </div>
+                </div>
+                <div class="">
+                  <button
+                    class="transform hover:scale-105 transition duration-300 ease-in-out btn-sendmessage hover:bg-orangect">Send
+                    message</button>
+                  <br /><br /><br />
+                </div>
+              </form>
+            </div>
+            <div class="">
+              <div class="lg:mt-5  md:pb-10  pb-10">
+                <br />
+
+                <p style="font-size: 14px">
+                  Send us your enquiries by filling the contact form below and we'll be in touch with
+                  you real soon.
+                </p>
+                <div class="flex py-3 items-center">
+                  <img class="img-flex-menusocial w-8 py-3"
+                    src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/mail-ico.svg" alt="" />
+                  <p class="sub-a-menu">info@evoplay.games</p>
+                </div>
+                <p>Follow us</p>
+                <div class="flex py-3 items-center">
+                  <img class="img-flex-menusocial w-8 py-3"
+                    src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/linkedin-ico.svg" alt="" />
+                  <p class="sub-a-menu">info@evoplay.games</p>
+                </div>
+
+                <div class="flex py-3 items-center">
+                  <img class="img-flex-menusocial w-8"
+                    src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/instagram-ico.svg" alt="" />
+                  <p class="sub-a-menu">info@evoplay.games</p>
+                </div>
+
+                <div class="flex py-3 items-center">
+                  <img class="img-flex-menusocial w-8 py-3"
+                    src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/facebook-ico.svg" alt="" />
+                  <p class="sub-a-menu">info@evoplay.games</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- mobile & ipad -->
+      <div class="hidden lg:block">
+        <div class="a-menu mt-5">
+          <p>Licenses and Local certificates</p>
+          <p class="sub-a-menu mt-3">
+            Evoplay Entertainment™ holds a Curacao gaming license in addition to local gaming
+            certificates, and complies with all European regulatory requirements.
+          </p>
+          <div class="flex-nav items-center justify-left mt-5">
+            <div class="">
+              <img class=" w-12 px-3"
+                src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/curasao.png?2" alt="" />
+            </div>
+            <div class="">
+              <img class="w-12 px-3" src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/ecogra.png"
+                alt="" />
+            </div>
+            <div class="">
+              <img class="w-12 px-3" src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/iso-b-13.svg"
+                alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="a-menu lg:mt-5">
+          <br />
+          <p>Awards & Nominations</p>
+          <p class="sub-a-menu lg:mt-5">
+            No stranger to industry awards, Evoplay has been nominated, shortlisted and picked up wins
+            since we started in 2017. From awards giants SBC and ERG, to G2E Asia and the Spinnovation
+            Summit, Evoplay always makes the headlines.
+          </p>
+        </div>
+
+        <div class="flex-nav items-center justify-left mt-5">
+          <div class="">
+            <img class=" w-12 px-3" src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/curasao.png?2"
+              alt="" />
+          </div>
+          <div class="">
+            <img class="w-12 px-3" src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/ecogra.png"
+              alt="" />
+          </div>
+          <div class="">
+            <img class="w-12 px-3" src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/iso-b-13.svg"
+              alt="" />
+          </div>
+        </div>
+        <div class="flex-nav items-center justify-left mt-5">
+          <div class="">
+            <img class=" w-12 px-3" src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/curasao.png?2"
+              alt="" />
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
+
+          <div class="">
+            <br />
+            <div class="flex">
+              Responsible gaming
+              <img class="img-flex-menu w-12"
+                src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/18_plus.svg" alt="" />
+            </div>
+            <p class="sub-a-menu mt-3">
+              Evoplay Entertainment™ takes social responsibility very seriously. To enter the
+              company's website and play a game demo, you must first confirm that you are of a legal
+              gambling age in your country.
+            </p>
+          </div>
+          <div>
+
+            <br />
+            <div class="flex">
+              Awards & Nominations
+              <img class="img-flex-menu w-12"
+                src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/copyright-ico.svg" alt="" />
+            </div>
+            <p class="sub-a-menu mt-3">
+              Evoplay Entertainment™ has numerous European-issued patent certificates and will
+              protect its intellectual property if said property and patents are infringed.
+            </p>
+
+          </div>
+
+          <div class=" lg:mt-5">
+            <br />
+            <div class="flex mb-5">
+              Responsible gaming
+              <img class="img-flex-menu w-12"
+                src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/18_plus.svg" alt="" />
+            </div>
+            <form>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="mb-3">
+
+                  <input type="text" id="default-input" placeholder="First name"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+                <div class="mb-3">
+
+                  <input type="text" id="default-input" placeholder="Last name"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+              </div>
+              <div class=" grid grid-cols-1 gap-4">
+                <div class="">
+                  <div class="relative ">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                      <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                        <path
+                          d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+                        <path
+                          d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+                      </svg>
+                    </div>
+                    <input type="text" id="input-group-1"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="name@example.com">
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <textarea id="message" rows="4"
+                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Your Message..."></textarea>
+                </div>
+              </div>
+              <div class="">
+                <button class="btn-sendmessage hover:bg-orangect">Send message</button>
+                <br /><br /><br />
+              </div>
+            </form>
+          </div>
+          <div class="">
+            <div class="lg:mt-5  md:pb-10  pb-10">
+              <br />
+
+              <p style="font-size: 14px">
+                Send us your enquiries by filling the contact form below and we'll be in touch with
+                you real soon.
+              </p>
+              <div class="flex py-3 items-center">
+                <img class="img-flex-menusocial w-8 py-3"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/mail-ico.svg" alt="" />
+                <p class="sub-a-menu">info@evoplay.games</p>
+              </div>
+              <p>Follow us</p>
+              <div class="flex py-3 items-center">
+                <img class="img-flex-menusocial w-8 py-3"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/linkedin-ico.svg" alt="" />
+                <p class="sub-a-menu">info@evoplay.games</p>
+              </div>
+
+              <div class="flex py-3 items-center">
+                <img class="img-flex-menusocial w-8"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/instagram-ico.svg" alt="" />
+                <p class="sub-a-menu">info@evoplay.games</p>
+              </div>
+
+              <div class="flex py-3 items-center">
+                <img class="img-flex-menusocial w-8 py-3"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/facebook-ico.svg" alt="" />
+                <p class="sub-a-menu">info@evoplay.games</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section1">
+    <video class="video-home lg pt-20" playsinline="" loop="" autoplay="" muted="">
+      <source src="./assets/img/promotebg.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="section2 md:px-40">
+    <div class="grid lg:grid-cols-2 grid-cols-1 w-full  gap-6">
+      <div class="flex items-center justify-center">
+        <div class="lg:px-10 px-2">
+          <div class="lg:text-left text-center lg:mt-0 mt-10">
+            <p class="font-extrabold lg:text-6xl text-3xl mb-4">
+              INDUSTRY <span class="text-emerald-500">FIRSTS</span>
+            </p>
+
+            <p class="lg:mt-10 lg:text-3xl text-lg font-bold">
+              <span class="text-orangect">MOBILE</span> ADAPTIVE
+            </p>
+
+            <p class="lg:text-left text-center  mb-6 lg:text-lg mt-2 lg:px-0 px-5">
+              Desktop, tablet or smartphone – our Full HD-quality games are
+              fast to load and designed to just work
+            </p>
+            <a href="./games.html">
+              <button
+                class="transform hover:scale-105 transition duration-300 ease-in-out bg-emerald-500 hover:bg-orangect px-6 py-2 rounded-md text-white">
+                <p class="text-lg">Portfolio</p>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class=" flex items-center">
+        <img src="./assets/img/bgindex.jpg" alt="" class="py-10 w-full" />
+      </div>
+    </div>
+  </div>
+
+  <div class="section3 bg-gray-50 px-5 lg:px-32 py-20">
+    <div class="text-center">
+      <p class="font-bold text-3xl mb-4">
+        OUR
+        <span class="text-emerald-500"><span class="text-orangect">ADVAN</span>TAGES</span>
+      </p>
+      <p class="text-sm md:text-md text-center mb-6  lg:text-lg px-5 lg:px-48 text-gray-400">
+        Experience the smoothest integration with simple API, game hosting,
+        and two wallets: seamless and transfer. You’ll also get HTML5 games
+        that work on any device, 360-degree marketing, and the best
+        personalized partner support in the industry: direct chats are
+        answered 24/7 and within just 15 minutes – giving you industry-leading
+        response times. We also offer English, Russian and Chinese language
+        support.
+      </p>
+      <a href="./aboutus.html">
+        <button
+          class="transform hover:scale-105 transition duration-300 ease-in-out bg-emerald-500 hover:bg-orangect px-6 py-2 rounded-md text-white">
+          <p class="text-lg">Portfolio</p>
+        </button>
+      </a>
+    </div>
+    <div class="mt-5 grid lg:grid-cols-12  grid-cols-1 w-full">
+      <div class="lg:col-span-12">
+        <div class="grid lg:grid-cols-12 md:grid-cols-2 grid-cols-1 gap-6 px-5 py-5 text-center text-lg">
+          <div
+            class="transform hover:scale-105 transition duration-300 ease-in-out lg:col-span-4 bg-white px-3 py-3  rounded-md shadow-md">
+            <p class="border-b">LICENSES & CERTIFICATES</p>
+
+            <div class=" w-full bg-white">
+
+              <div id="column-chart"></div>
+
+            </div>
+
+            <script>
+              // ApexCharts options and config
+              window.addEventListener("load", function () {
+                const options = {
+                  colors: ["#1A56DB", "#FDBA8C"],
+                  series: [
+                    {
+                      name: "Organic",
+                      color: "#1A56DB",
+                      data: [
+                        { x: "Mon", y: 231 },
+                        { x: "Tue", y: 122 },
+                        { x: "Wed", y: 63 },
+                        { x: "Thu", y: 421 },
+                        { x: "Fri", y: 122 },
+                        { x: "Sat", y: 323 },
+                        { x: "Sun", y: 111 },
+                      ],
+                    },
+                    {
+                      name: "Social media",
+                      color: "#FDBA8C",
+                      data: [
+                        { x: "Mon", y: 232 },
+                        { x: "Tue", y: 113 },
+                        { x: "Wed", y: 341 },
+                        { x: "Thu", y: 224 },
+                        { x: "Fri", y: 522 },
+                        { x: "Sat", y: 411 },
+                        { x: "Sun", y: 243 },
+                      ],
+                    },
+                  ],
+                  chart: {
+                    type: "bar",
+                    height: "320px",
+                    fontFamily: "Inter, sans-serif",
+                    toolbar: {
+                      show: false,
+                    },
+                  },
+                  plotOptions: {
+                    bar: {
+                      horizontal: false,
+                      columnWidth: "70%",
+                      borderRadiusApplication: "end",
+                      borderRadius: 8,
+                    },
+                  },
+                  tooltip: {
+                    shared: true,
+                    intersect: false,
+                    style: {
+                      fontFamily: "Inter, sans-serif",
+                    },
+                  },
+                  states: {
+                    hover: {
+                      filter: {
+                        type: "darken",
+                        value: 1,
+                      },
+                    },
+                  },
+                  stroke: {
+                    show: true,
+                    width: 0,
+                    colors: ["transparent"],
+                  },
+                  grid: {
+                    show: false,
+                    strokeDashArray: 4,
+                    padding: {
+                      left: 2,
+                      right: 2,
+                      top: -14
+                    },
+                  },
+                  dataLabels: {
+                    enabled: false,
+                  },
+                  legend: {
+                    show: false,
+                  },
+                  xaxis: {
+                    floating: false,
+                    labels: {
+                      show: true,
+                      style: {
+                        fontFamily: "Inter, sans-serif",
+                        cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+                      }
+                    },
+                    axisBorder: {
+                      show: false,
+                    },
+                    axisTicks: {
+                      show: false,
+                    },
+                  },
+                  yaxis: {
+                    show: false,
+                  },
+                  fill: {
+                    opacity: 1,
+                  },
+                }
+
+                if (document.getElementById("column-chart") && typeof ApexCharts !== 'undefined') {
+                  const chart = new ApexCharts(document.getElementById("column-chart"), options);
+                  chart.render();
+                }
+              });
+            </script>
+
+          </div>
+          <div
+            class="transform hover:scale-105 transition duration-300 ease-in-out lg:col-span-4 bg-white px-3 py-3  rounded-md shadow-md">
+            <p class="border-b">PRESENT IN COUNTRIES</p>
+
+            <div class="max-w-sm w-full bg-white ">
+
+
+
+              <!-- Line Chart -->
+              <div class="py-6" id="pie-chart"></div>
+
+
+            </div>
+
+            <script>
+              // ApexCharts options and config
+              window.addEventListener("load", function () {
+                const getChartOptions = () => {
+                  return {
+                    series: [52.8, 26.8, 20.4],
+                    colors: ["#1C64F2", "#16BDCA", "#9061F9"],
+                    chart: {
+                      height: 420,
+                      width: "100%",
+                      type: "pie",
+                    },
+                    stroke: {
+                      colors: ["white"],
+                      lineCap: "",
+                    },
+                    plotOptions: {
+                      pie: {
+                        labels: {
+                          show: true,
+                        },
+                        size: "100%",
+                        dataLabels: {
+                          offset: -25
+                        }
+                      },
+                    },
+                    labels: ["Direct", "Organic search", "Referrals"],
+                    dataLabels: {
+                      enabled: true,
+                      style: {
+                        fontFamily: "Inter, sans-serif",
+                      },
+                    },
+                    legend: {
+                      position: "bottom",
+                      fontFamily: "Inter, sans-serif",
+                    },
+                    yaxis: {
+                      labels: {
+                        formatter: function (value) {
+                          return value + "%"
+                        },
+                      },
+                    },
+                    xaxis: {
+                      labels: {
+                        formatter: function (value) {
+                          return value + "%"
+                        },
+                      },
+                      axisTicks: {
+                        show: false,
+                      },
+                      axisBorder: {
+                        show: false,
+                      },
+                    },
+                  }
+                }
+
+                if (document.getElementById("pie-chart") && typeof ApexCharts !== 'undefined') {
+                  const chart = new ApexCharts(document.getElementById("pie-chart"), getChartOptions());
+                  chart.render();
+                }
+              });
+            </script>
+
+          </div>
+          <div
+            class="transform hover:scale-105 transition duration-300 ease-in-out lg:col-span-4 bg-white px-3 py-3  rounded-md shadow-md">
+            <div class="h-full">
+              <p class="border-b">SUPPORTED LANGUAGES</p>
+              <div class=" h-full  flex items-center justify-center py-10">
+                <img src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/flags-cloud2.svg" alt=""
+                  class="h-full">
+              </div>
+            </div>
+          </div>
+          <div
+            class="transform hover:scale-105 transition duration-300 ease-in-out lg:col-span-4 bg-white px-3 py-3  rounded-md shadow-md">
+            <p class="border-b">SUPPORT</p>
+            <div class="mt-2 text-left font-bold text-xl ">
+              <ul>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/schedule-ico.svg" alt=""
+                      class="w-16">
+                  </div> <span class="text-purple-500"> QUEST TOOL
+                  </span>
+                </li>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/freespins-ico.svg" alt=""
+                      class="w-16">
+                  </div> <span class="text-lime-500"> FREESPINS</span>
+                </li>
+
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="   https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/ee-ico.svg" alt=""
+                      class="w-16">
+                  </div> <span class="text-sky-500"> BRANDED GAMES
+
+                  </span>
+                </li>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/gift-ico.svg"
+                      alt="" class="w-16">
+                  </div> <span class="text-orange-400"> BONUS BUY FEATURE</span>
+                </li>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/jackpot-ico.svg" alt=""
+                      class="w-16">
+                  </div> <span class="text-red-500"> JACKPOTS </span>
+                </li>
+
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/tournaments-ico.svg" alt=""
+                      class="w-16">
+                  </div> <span class="text-blue-500"> TOURNAMENTS</span>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+          <div
+            class="transform hover:scale-105 transition duration-300 ease-in-out lg:col-span-4 bg-white px-3 py-3  rounded-md shadow-md">
+
+            <p class="border-b ">ACCOUNT MANAGEMENT SUPPORT</p>
+            <div class="mt-2 text-left text-gray-500 text-sm">
+              <ul>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/blue-ico-1.svg" alt="">
+                  </div> <span> Promo materials supply</span>
+                </li>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/blue-ico-2.svg" alt="">
+                  </div> <span> Free/Bonus/Welcome spins</span>
+                </li>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/blue-ico-3.svg" alt="">
+                  </div> <span> Crypto currencies add-ons</span>
+                </li>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/blue-ico-11.svg" alt="">
+                  </div> <span> Personalized offers</span>
+                </li>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/blue-ico-5.svg" alt="">
+                  </div> <span> Exclusive pre-releases</span>
+                </li>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/blue-ico-12.svg" alt="">
+                  </div> <span> Marketing support</span>
+                </li>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/blue-ico-6.svg" alt="">
+                  </div> <span> Top 10 performing games per region monthly update</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="transform hover:scale-105 transition duration-300 ease-in-out lg:col-span-4 bg-white px-3 py-3  rounded-md shadow-md">
+            <p class="border-b">SUPPORTED ALL DEVICES</p>
+            <div class="max-w-sm w-full bg-white ">
+              <div>
+                <div class="flex pt-3" id="devices">
+                  <div class="flex flex-wrap items-center mr-4">
+                    <input id="desktop" type="checkbox" value="desktop"
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="desktop"
+                      class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Desktop</label>
+                  </div>
+                  <div class="flex items-center mr-4">
+                    <input id="tablet" type="checkbox" value="tablet"
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="tablet" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Tablet</label>
+                  </div>
+                  <div class="flex items-center mr-4">
+                    <input id="mobile" type="checkbox" value="mobile"
+                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="mobile" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Mobile</label>
+                  </div>
+                </div>
+              </div>
+              <!-- Line Chart -->
+              <div class="py-6" id="donut-chart"></div>
+
+
+            </div>
+
+            <script>
+              // ApexCharts options and config
+              window.addEventListener("load", function () {
+                const getChartOptions = () => {
+                  return {
+                    series: [35.1, 23.5, 2.4, 5.4],
+                    colors: ["#1C64F2", "#16BDCA", "#FDBA8C", "#E74694"],
+                    chart: {
+                      height: 320,
+                      width: "100%",
+                      type: "donut",
+                    },
+                    stroke: {
+                      colors: ["transparent"],
+                      lineCap: "",
+                    },
+                    plotOptions: {
+                      pie: {
+                        donut: {
+                          labels: {
+                            show: true,
+                            name: {
+                              show: true,
+                              fontFamily: "Inter, sans-serif",
+                              offsetY: 20,
+                            },
+                            total: {
+                              showAlways: true,
+                              show: true,
+                              label: "Unique visitors",
+                              fontFamily: "Inter, sans-serif",
+                              formatter: function (w) {
+                                const sum = w.globals.seriesTotals.reduce((a, b) => {
+                                  return a + b
+                                }, 0)
+                                return `${sum}k`
+                              },
+                            },
+                            value: {
+                              show: true,
+                              fontFamily: "Inter, sans-serif",
+                              offsetY: -20,
+                              formatter: function (value) {
+                                return value + "k"
+                              },
+                            },
+                          },
+                          size: "80%",
+                        },
+                      },
+                    },
+                    grid: {
+                      padding: {
+                        top: -2,
+                      },
+                    },
+                    labels: ["Direct", "Sponsor", "Affiliate", "Email marketing"],
+                    dataLabels: {
+                      enabled: false,
+                    },
+                    legend: {
+                      position: "bottom",
+                      fontFamily: "Inter, sans-serif",
+                    },
+                    yaxis: {
+                      labels: {
+                        formatter: function (value) {
+                          return value + "k"
+                        },
+                      },
+                    },
+                    xaxis: {
+                      labels: {
+                        formatter: function (value) {
+                          return value + "k"
+                        },
+                      },
+                      axisTicks: {
+                        show: false,
+                      },
+                      axisBorder: {
+                        show: false,
+                      },
+                    },
+                  }
+                }
+
+                if (document.getElementById("donut-chart") && typeof ApexCharts !== 'undefined') {
+                  const chart = new ApexCharts(document.getElementById("donut-chart"), getChartOptions());
+                  chart.render();
+
+                  // Get all the checkboxes by their class name
+                  const checkboxes = document.querySelectorAll('#devices input[type="checkbox"]');
+
+                  // Function to handle the checkbox change event
+                  function handleCheckboxChange(event, chart) {
+                    const checkbox = event.target;
+                    if (checkbox.checked) {
+                      switch (checkbox.value) {
+                        case 'desktop':
+                          chart.updateSeries([15.1, 22.5, 4.4, 8.4]);
+                          break;
+                        case 'tablet':
+                          chart.updateSeries([25.1, 26.5, 1.4, 3.4]);
+                          break;
+                        case 'mobile':
+                          chart.updateSeries([45.1, 27.5, 8.4, 2.4]);
+                          break;
+                        default:
+                          chart.updateSeries([55.1, 28.5, 1.4, 5.4]);
+                      }
+
+                    } else {
+                      chart.updateSeries([35.1, 23.5, 2.4, 5.4]);
+                    }
+                  }
+
+                  // Attach the event listener to each checkbox
+                  checkboxes.forEach((checkbox) => {
+                    checkbox.addEventListener('change', (event) => handleCheckboxChange(event, chart));
+                  });
+                }
+              });
+            </script>
+
+          </div>
+          <div class=" lg:col-span-8 bg-white px-3 py-3  rounded-md shadow-md">
+            <p class="border-b">CERTIFIED GAMES</p>
+            <div class="grid grid-cols-4 md:grid-cols-4 gap-4 py-5 md:py-10 lg:py-5 lg:px-16">
+              <div class="flex justify-center transform hover:scale-105 transition duration-300 ease-in-out"><img
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/list-games/80/80%D1%8580_PenaltyShootOut.png"
+                  alt="" class="rounded-lg w-24"></div>
+              <div class="flex justify-center transform hover:scale-105 transition duration-300 ease-in-out"><img
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/list-games/80/80%D1%8580_RiseOfHorus.png"
+                  alt="" class="rounded-lg w-24"></div>
+              <div class="flex justify-center transform hover:scale-105 transition duration-300 ease-in-out"><img
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/list-games/80/80%D1%8580_TempleOfDead.png"
+                  alt="" class="rounded-lg w-24"></div>
+              <div class="flex justify-center transform hover:scale-105 transition duration-300 ease-in-out"><img
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/list-games/80/80%D1%8580_AnimalQuest.png"
+                  alt="" class="rounded-lg w-24"></div>
+              <div class="flex justify-center transform hover:scale-105 transition duration-300 ease-in-out"><img
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/list-games/80/80%D1%8580_BonanzaWheel.png"
+                  alt="" class="rounded-lg w-24"></div>
+              <div class="flex justify-center transform hover:scale-105 transition duration-300 ease-in-out"><img
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/list-games/80/80%D1%8580_FruitBurst.png"
+                  alt="" class="rounded-lg w-24"></div>
+              <div class="flex justify-center transform hover:scale-105 transition duration-300 ease-in-out"><img
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/list-games/80/80%D1%8580_FruitSuperNova.png"
+                  alt="" class="rounded-lg w-24"></div>
+              <div class="flex justify-center transform hover:scale-105 transition duration-300 ease-in-out"><img
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/list-games/80/80%D1%8580_GoldOfSirens.png"
+                  alt="" class="rounded-lg w-24"></div>
+
+
+              <div class="flex justify-center transform hover:scale-105 transition duration-300 ease-in-out"><img
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/list-games/80/80%D1%8580_HotTripleSevens.png"
+                  alt="" class="rounded-lg w-24"></div>
+              <div class="flex justify-center transform hover:scale-105 transition duration-300 ease-in-out"><img
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/list-games/80/80%D1%8580_IceMania.png"
+                  alt="" class="rounded-lg w-24"></div>
+              <div class="flex justify-center transform hover:scale-105 transition duration-300 ease-in-out"><img
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/list-games/80/80%D1%8580_IrishReels.png"
+                  alt="" class="rounded-lg w-24"></div>
+              <div class="flex justify-center transform hover:scale-105 transition duration-300 ease-in-out"><img
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/list-games/80/80%D1%8580_MineField.png"
+                  alt="" class="rounded-lg w-24"></div>
+
+
+            </div>
+          </div>
+          <div
+            class="transform hover:scale-105 transition duration-300 ease-in-out lg:col-span-4 bg-white px-3 py-3  rounded-md shadow-md">
+
+            <p class="border-b">ESSENTIAL QUALITIES</p>
+            <div class="mt-5 text-left text-gray-500 text-sm">
+              <ul>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/quality-1.svg" alt="">
+                  </div> <span> AAA QUALITY Outstanding
+                  </span>
+                </li>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/quality-3.svg" alt="">
+                  </div> <span> 100+ currencies</span>
+                </li>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/quality-2.svg" alt="">
+                  </div> <span> FREE BETS
+                    Changeable bets</span>
+                </li>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/quality-4.svg" alt="">
+                  </div> <span> SPINENTIAL
+                    New fast </span>
+                </li>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/quality-5.svg" alt="">
+                  </div> <span> PROMO TOOLS FOR OPERATORS
+                  </span>
+                </li>
+                <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                  <div class=""><img
+                      src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/quality-6.svg" alt="">
+                  </div> <span> LOCAL MARKETS COVERAGE</span>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+          <div class=" lg:col-span-12 bg-white px-3 py-3  rounded-md shadow-md">
+
+            <p class="border-b">INTEGRATION FEATURES</p>
+            <div class="mt-2  text-gray-500 text-sm grid lg:grid-cols-2 md:grid-cols-1 gap-4">
+              <div class="transform hover:scale-105 transition duration-300 ease-in-out">
+                <ul>
+                  <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                    <div class=""><img
+                        src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/blue-ico-7.svg" alt="">
+                    </div> <span> SIMPLE API AND GAME HOSTING
+                    </span>
+                  </li>
+                  <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                    <div class=""><img
+                        src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/blue-ico-8.svg" alt="">
+                    </div> <span>SUSPICIOUS ACTIVITY</span>
+                  </li>
+                  <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                    <div class=""><img
+                        src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/blue-ico-9.svg" alt="">
+                    </div> <span> INTEGRATION WALLETS</span>
+                  </li>
+                  <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                    <div class=""><img
+                        src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/blue-ico-13.svg" alt="">
+                    </div> <span> 24/7 TECHNICAL SUPPORT </span>
+                  </li>
+                  <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                    <div class=""><img
+                        src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/blue-ico-14.svg" alt="">
+                    </div> <span>FREESPINS MANAGEMENT FROM BACK OFFICE
+
+                    </span>
+                  </li>
+                  <li class="py-2 px-3 border-b border-gray-100 flex gap-4 items-center">
+                    <div class=""><img
+                        src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/blue-ico-10.svg" alt="">
+                    </div> <span> FEATURES:</span>
+                  </li>
+
+                </ul>
+              </div>
+              <div class="transform hover:scale-105 transition duration-300 ease-in-out text-black text-xl font-bold">
+                <ul>
+                  <li class="py-2 px-3  flex gap-4 items-center">
+                    <div class="bg-orange-100 px-4 py-4 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="40"
+                        height="40" viewBox="0 0 24 24" fill="none" stroke="#f59c22" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock">
+                        <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                      </svg>
+                    </div> <span> Back office replays
+                    </span>
+                  </li>
+                  <li class="py-2 px-3 flex gap-4 items-center">
+                    <div class="bg-pink-100 px-4 py-4 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="40"
+                        height="40" viewBox="0 0 24 24" fill="none" stroke="#ff007b" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-area-chart">
+                        <path d="M3 3v18h18" />
+                        <path d="M7 12v5h12V8l-5 5-4-4Z" />
+                      </svg>
+                    </div> <span> Callback statistics
+                    </span>
+                  </li>
+                  <li class="py-2 px-3 flex gap-4 items-center">
+                    <div class="bg-emerald-100 px-4 py-4 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="40"
+                        height="40" viewBox="0 0 24 24" fill="none" stroke="#00b37d" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-history">
+                        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                        <path d="M3 3v5h5" />
+                        <path d="M12 7v5l4 2" />
+                      </svg>
+                    </div> <span> Game events history
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="section4  lg:px-40 md:px-10 lg:py-20 px-5 py-20">
+    <div class="text-center">
+      <p class="font-bold text-2xl md:text-3xl mb-10">
+        <span class="text-emerald-500"><span class="text-[#000]">LATEST</span> NEWS</span>
+      </p>
+    </div>
+    <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 w-full lg:gap-8 gap-6">
+      <div class="transform hover:scale-105 transition duration-300 ease-in-out">
+        <div class="lg:col-span-6 bg-white rounded-md shadow-md">
+          <div class="flex items-center justify-center">
+            <img class="rounded-md" src="https://evoplay.games/wp-content/uploads/2023/08/01_720%D1%85485.jpg" alt="" />
+          </div>
+          <div class="">
+            <div class="px-5 pb-5">
+              <p class="my-4 font-bold lg:text-lg">
+                Evoplay scores a double win – gold and bronze!
+              </p>
+
+              <p class="text-sm mb-5 text-gray-500">
+                Evoplay has hit a double win at two high-profile iGaming....
+              </p>
+              <button
+                class="transform hover:scale-105 transition duration-300 ease-in-out text-white px-4 rounded-md py-2 bg-emerald-500 hover:bg-orangect flex items-center">
+                <p class="">Continue Reading</p>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-arrow-right">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="transform hover:scale-105 transition duration-300 ease-in-out">
+        <div class="lg:col-span-6 bg-white rounded-md shadow-md">
+          <div class="flex items-center justify-center">
+            <img class="rounded-md" src="https://evoplay.games/wp-content/uploads/2023/05/373%D1%85251-23.jpg" alt="" />
+          </div>
+          <div class="">
+            <div class="px-5 pb-5">
+              <p class="my-4 font-bold lg:text-lg">
+                Evoplay scores a double win – gold and bronze!
+              </p>
+
+              <p class="text-sm mb-5 text-gray-500">
+                Evoplay has hit a double win at two high-profile iGaming....
+              </p>
+              <button
+                class="transform hover:scale-105 transition duration-300 ease-in-out text-white px-4 rounded-md py-2 bg-emerald-500 hover:bg-orangect flex items-center">
+                <p class="">Continue Reading</p>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-arrow-right">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="transform hover:scale-105 transition duration-300 ease-in-out">
+        <div class="lg:col-span-6 bg-white rounded-md shadow-md">
+          <div class="flex items-center justify-center">
+            <img class="rounded-md" src="https://evoplay.games/wp-content/uploads/2023/04/373%D1%85251-19.jpg" alt="" />
+          </div>
+          <div class="">
+            <div class="px-5 pb-5">
+              <p class="my-4 font-bold lg:text-lg">
+                Evoplay scores a double win – gold and bronze!
+              </p>
+
+              <p class="text-sm mb-5 text-gray-500">
+                Evoplay has hit a double win at two high-profile iGaming....
+              </p>
+              <button
+                class="transform hover:scale-105 transition duration-300 ease-in-out text-white px-4 rounded-md py-2 bg-emerald-500 hover:bg-orangect flex items-center">
+                <p class="">Continue Reading</p>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-arrow-right">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="transform hover:scale-105 transition duration-300 ease-in-out">
+        <div class="lg:col-span-6 bg-white rounded-md shadow-md">
+          <div class="flex items-center justify-center">
+            <img class="rounded-md"
+              src="https://evoplay.games/wp-content/uploads/2022/12/720__485_casinoorg-373x251.jpg" alt="" />
+          </div>
+          <div class="">
+            <div class="px-5 pb-5">
+              <p class="my-4 font-bold lg:text-lg">
+                Evoplay scores a double win – gold and bronze!
+              </p>
+
+              <p class="text-sm mb-5 text-gray-500">
+                Evoplay has hit a double win at two high-profile iGaming....
+              </p>
+              <button
+                class="transform hover:scale-105 transition duration-300 ease-in-out text-white px-4 rounded-md py-2 bg-emerald-500 hover:bg-orangect flex items-center">
+                <p class="">Continue Reading</p>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-arrow-right">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section5 lg:px-40 lg:py-10 px-5 py-10">
+    <div class="text-center">
+      <p class="mb-10 font-bold text-2xl md:text-3xl" customSize="">
+        <span class="">PARTNER</span>
+      </p>
+    </div>
+    <div class="mt-5 grid grid-cols-2 lg:grid-cols-4  w-full md:px-20 lg:px-0 gap-4">
+      <div class=" w-full flex items-center justify-center px-1 lg:py-20 py-5 rounded-md shadow-md">
+        <img class="transform hover:scale-125 transition duration-500 ease-in-out "
+          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/partners-color/Playpearls.png" alt="" />
+      </div>
+      <div class=" w-full flex items-center justify-center px-1 lg:py-20 py-5 rounded-md shadow-md">
+        <img class="transform hover:scale-125 transition duration-500 ease-in-out "
+          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/partners-color/EveryMatrix.png"
+          alt="" />
+      </div>
+      <div class=" w-full flex items-center justify-center px-1 lg:py-20 py-5 rounded-md shadow-md">
+        <img class="transform hover:scale-125 transition duration-500 ease-in-out "
+          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/partners-color/Pinproject.png" alt="" />
+      </div>
+      <div class=" w-full flex items-center justify-center px-1 lg:py-20 py-5 rounded-md shadow-md">
+        <img class="transform hover:scale-125 transition duration-500 ease-in-out "
+          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/partners-color/Playzido.png" alt="" />
+      </div>
+
+      <div class=" w-full flex items-center justify-center px-1 lg:py-20 py-5 rounded-md shadow-md">
+        <img class="transform hover:scale-125 transition duration-500 ease-in-out "
+          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/partners-color/Mozzart.png" alt="" />
+      </div>
+      <div class=" w-full flex items-center justify-center px-1 lg:py-20 py-5 rounded-md shadow-md">
+        <img class="transform hover:scale-125 transition duration-500 ease-in-out "
+          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/partners-color/EGT.png" alt="" />
+      </div>
+      <div class=" w-full flex items-center justify-center px-1 lg:py-20 py-5 rounded-md shadow-md">
+        <img class="transform hover:scale-125 transition duration-500 ease-in-out "
+          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/partners-color/upgaming.png" alt="" />
+      </div>
+      <div class=" w-full flex items-center justify-center px-1 lg:py-20 py-5 rounded-md shadow-md">
+        <img class="transform hover:scale-125 transition duration-500 ease-in-out "
+          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/partners-color/WinBet.png" alt="" />
+      </div>
+
+      <div class=" w-full flex items-center justify-center px-1 lg:py-20 py-5 rounded-md shadow-md">
+        <img class="transform hover:scale-125 transition duration-500 ease-in-out "
+          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/partners-color/SoftGaming.png" alt="" />
+      </div>
+      <div class=" w-full flex items-center justify-center px-1 lg:py-20 py-5 rounded-md shadow-md">
+        <img class="transform hover:scale-125 transition duration-500 ease-in-out "
+          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/partners-color/BetConstruct.png"
+          alt="" />
+      </div>
+      <div class=" w-full flex items-center justify-center px-1 lg:py-20 py-5 rounded-md shadow-md">
+        <img class="transform hover:scale-125 transition duration-500 ease-in-out "
+          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/partners-color/Slotsio2.png" alt="" />
+      </div>
+      <div class=" w-full flex items-center justify-center px-1 lg:py-20 py-5 rounded-md shadow-md">
+        <img class="transform hover:scale-125 transition duration-500 ease-in-out "
+          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/partners-color/Meridianbet.png"
+          alt="" />
+      </div>
+
+      <div class=" w-full flex items-center justify-center px-1 lg:py-20 py-5 rounded-md shadow-md">
+        <img class="transform hover:scale-125 transition duration-500 ease-in-out "
+          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/partners-color/Digitain.png" alt="" />
+      </div>
+      <div class=" w-full flex items-center justify-center px-1 lg:py-20 py-5 rounded-md shadow-md">
+        <img class="transform hover:scale-125 transition duration-500 ease-in-out "
+          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/partners-color/Adjabet.png" alt="" />
+      </div>
+      <div class=" w-full flex items-center justify-center px-1 lg:py-20 py-5 rounded-md shadow-md">
+        <img class="transform hover:scale-125 transition duration-500 ease-in-out "
+          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/partners-color/SaGaming.png" alt="" />
+      </div>
+      <div class=" w-full flex items-center justify-center px-1 lg:py-20 py-5 rounded-md shadow-md">
+        <img class="transform hover:scale-125 transition duration-500 ease-in-out "
+          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/partners-color/LatamWinGrupo.png"
+          alt="" />
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER -->
+  <div class="bg-[#000] text-zinc-50 w-full h-full px-10 lg:px-40 py-10">
+    <div class=" grid grid-cols-1 md:grid-cols-4">
+      <div class="">
+        <img src="./assets/img/newlogo.gif" class="mr-3 lg:h-12 h-10" alt="Logo" />
+        <div class="mt-10">
+          Miniluck © 2023. <br />
+          All rights reserved.
+        </div>
+        <div class="my-5 md:my-10 flex gap-6">
+          <div class="flex gap-4 w-full text-sm mb-2">
+            <div class="flex items-center">
+              <div
+                class="transform hover:scale-105 transition duration-300 ease-in-out bg-emerald-500 hover:bg-orangect rounded-full my-2 p-2 mr-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-facebook">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div
+                class="transform hover:scale-105 transition duration-300 ease-in-out bg-emerald-500 hover:bg-orangect rounded-full my-2 p-2 mr-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-instagram">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div
+                class="transform hover:scale-105 transition duration-300 ease-in-out bg-emerald-500 hover:bg-orangect rounded-full my-2 p-2 mr-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-mail">
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <p class="text-gray-300 font-bold">Menu</p>
+        <div class="mt-5">
+          <ul>
+            <li>Home</li>
+            <li>Games</li>
+            <li>Partnerships</li>
+            <li>News & Event</li>
+            <li>Contact Us</li>
+          </ul>
+        </div>
+      </div>
+      <div class="">
+        <p class="text-gray-300 font-bold">Games</p>
+
+        <div class="mt-5 flex flex-wrap gap-4">
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-20 rounded-md shadow-md"
+              src="https://evoplay.games/wp-content/uploads/2023/01/Megagreatestcatchbonus_580x580-1.jpg" alt="" />
+          </div>
+
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-20 rounded-md shadow-md"
+              src="https://evoplay.games/wp-content/uploads/2021/03/PenaltyShootOut_270x270.jpg" alt="" />
+          </div>
+
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-20 rounded-md shadow-md" src="https://evoplay.games/wp-content/uploads/2021/09/580x580.jpg"
+              alt="" />
+          </div>
+
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-20 rounded-md shadow-md"
+              src="https://evoplay.games/wp-content/uploads/2023/01/treasuresnipes_270x270.jpg" alt="" />
+          </div>
+
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-20 rounded-md shadow-md"
+              src="https://evoplay.games/wp-content/uploads/2021/03/LegendOfKaan_270x270.jpg" alt="" />
+          </div>
+
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-20 rounded-md shadow-md"
+              src="https://evoplay.games/wp-content/uploads/2022/07/hotvolkano_270x270.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-10 lg:mt-0">
+        <p class="text-gray-300 font-bold ">Licenses & Certificates</p>
+
+        <div class="mt-5 flex flex-wrap justify-center gap-4">
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-20 rounded-md shadow-md"
+              src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/ecogra.png" alt="" />
+          </div>
+
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-10 rounded-md shadow-md"
+              src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/iso-b-13.svg" alt="" />
+          </div>
+
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-10 rounded-md shadow-md"
+              src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/curasao.png?2" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='pre-loader'>
+    <img class='loading-gif' alt='loading' src="https://media0.giphy.com/media/11FuEnXyGsXFba/source.gif" />
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+  <!-- js to hide preloader loading is done -->
+  <script type='text/javascript'>
+    window.addEventListener('load', function () {
+      document.querySelector('.pre-loader').className += ' hidden';
+    });
+  </script>
+</body>
+
+</html>

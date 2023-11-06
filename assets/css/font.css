@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "Lineseed";
+    src: url("../font/LINE_Seed_Sans_EN/Web/WOFF/LINESeedSans_W_Rg.woff") format("truetype");
+  }
+  *{
+      font-family: 'Lineseed';
+  }

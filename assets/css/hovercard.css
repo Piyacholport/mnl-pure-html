@@ -1,0 +1,27 @@
+.content-div{
+    background-image:url('https://evoplay.games/wp-content/themes/evoplay/assets/img/branded-games-page/branded-game-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+  }
+    .content-div:hover{
+      background-image:
+      linear-gradient(to right,
+       #50b283, #50b283 ),
+       url('https://evoplay.games/wp-content/themes/evoplay/assets/img/branded-games-page/branded-game-1.jpg');
+      }
+  
+      .image-cover  {
+        height:260px;
+      }
+    /*
+    -remove the classes below if you have the 'group-hover'property added in your tailwind config file
+    -also remove the class from the html template
+    */
+      .content-div:hover .fd-cl{ 
+   opacity:25%;
+      }
+      .content-div:hover .fd-sh{ 
+   opacity: 25%;
+      }
+  

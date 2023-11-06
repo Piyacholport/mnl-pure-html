@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --boxs-size: 10vw;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .conatiner {
+            display: grid;
+            grid-template-columns: repeat(7, var(--boxs-size));
+            grid-template-rows: repeat(7, var(--boxs-size));
+            gap: 0.25em;
+        }
+
+        .boxs {
+            height: var(--boxs-size);
+            width: var(--boxs-size);
+        }
+
+        /* .boxs:nth-child(odd) {
+            background-color: black;
+        }
+
+        .boxs:nth-child(even) {
+            background-color: red;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="conatiner">
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/05/X_Demon_bonus_buy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/05/X_Demon_bonus_buy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/06/Northern_temple_bonus_buy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/07/goddessofthenightbonusbuy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/06/neoncapitalbonusbuy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/08/Europe_transit_bonus_buy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/07/luckyporker_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/06/penaltyshootoutstreet_270x270.jpg);">
+        </div>
+
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/05/X_Demon_bonus_buy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/06/Northern_temple_bonus_buy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/07/goddessofthenightbonusbuy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/06/neoncapitalbonusbuy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/08/Europe_transit_bonus_buy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/07/luckyporker_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/06/penaltyshootoutstreet_270x270.jpg);">
+        </div>
+
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/05/X_Demon_bonus_buy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/06/Northern_temple_bonus_buy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/07/goddessofthenightbonusbuy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/06/neoncapitalbonusbuy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/08/Europe_transit_bonus_buy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/07/luckyporker_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/06/penaltyshootoutstreet_270x270.jpg);">
+        </div>
+
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/05/X_Demon_bonus_buy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/06/Northern_temple_bonus_buy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/07/goddessofthenightbonusbuy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/06/neoncapitalbonusbuy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/08/Europe_transit_bonus_buy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/07/luckyporker_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/05/Unlimited_Treasures_Bonus_Buy_270x270.jpg);">
+        </div>
+
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/05/X_Demon_bonus_buy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/06/Northern_temple_bonus_buy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/07/goddessofthenightbonusbuy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/06/neoncapitalbonusbuy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/08/Europe_transit_bonus_buy_270x270.jpg);">
+        </div>
+        <div class="boxs" id="box1"
+            style=" background-image: url(https://evoplay.games/wp-content/uploads/2023/07/luckyporker_270x270.jpg);">
+        </div>
+
+
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.fromTo(
+            ".boxs",
+            {
+                // duration:1,
+                borderRadius: "0%",
+                scale: 0.2
+            },
+            {
+                borderRadius: "10%",
+                rotate: 360,
+                scale: 1,
+                repeat: -1,
+                yoyo: true,
+                stagger: {
+                    grid: "auto",
+                    from: "center",
+                    amount: 1
+                }
+            }
+        );
+    </script>
+</body>
+
+</html>

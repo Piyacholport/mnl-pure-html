@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniLuck</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./assets/css/navbar.css">
+  <link rel="stylesheet" href="./assets/css/preload.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+
+            orangect: "#f59c22",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body>
+  <div class="header">
+    <a href="./index.html" class="logo"><img src='../assets/img/Web_miniLuck_logo_ani.gif' class="h-20 lg:pl-32"
+        alt="Logo" /></a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon "></span></label>
+    <ul class="dt-menu">
+      <li class="dt-li">
+        <a class="dt-a-menu" href="./index.html">
+          <span class="pl-1">Home</span>
+        </a>
+      </li>
+      <li class="dt-li">
+        <a class="dt-a-menu" href="./aboutus.html">
+          <span class="pl-1">About Us</span>
+        </a>
+      </li>
+      <li class="dt-li">
+
+        <div class="pl-1 pt-1">
+            
+
+
+                <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover"
+                    data-dropdown-trigger="hover" class="text-black focus:text-emerald-500 hover:text-emerald-400 text-lg px-5 py-2.5 text-center inline-flex items-center " type="button"> Games <svg
+                        class="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" d="m1 1 4 4 4-4" />
+                    </svg></button>
+                <!-- Dropdown menu -->
+                <div id="dropdownHover"
+                    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                    <ul class="py-2 text-md text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                      <li>
+                          <a href="./games.html"
+                              class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-emerald-600">All
+                              Games</a>
+                      </li>
+                      <li>
+                          <a href="./videoslot.html"
+                              class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-emerald-600">Video
+                              Slot</a>
+                      </li>
+                      <li>
+                          <a href="./instant.html"
+                              class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-emerald-600">Instant
+                              Games</a>
+                      </li>
+                      <li>
+                          <a href="./classics.html"
+                              class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-emerald-600">Classics
+                              Games</a>
+                      </li>
+                      <li>
+                          <a href="./tablegames.html"
+                              class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-emerald-600">Table
+                              Games
+                          </a>
+                      </li>
+                      <li>
+                          <a href="/bonusbgames.html"
+                              class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-emerald-600">Bounus
+                              buy Games
+                          </a>
+                      </li>
+                      <li>
+                          <a href="./jackpot.html"
+                              class="block px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-600 hover:text-emerald-600">jackpot
+                              Gaems
+                          </a>
+                      </li>
+                  </ul>
+                </div>
+         
+        </div>
+
+    </li>
+      <li class="dt-li">
+        <a class="dt-a-menu" href="./partnerships.html" id="active">
+          <span class="pl-1">Partnerships</span>
+        </a>
+      </li>
+      <li class="dt-li">
+        <a class="dt-a-menu" href="./newsevent.html">
+          <span class="pl-1">News & Events</span>
+        </a>
+      </li>
+      <li class="dt-li">
+        <a class="dt-a-menu" href="./contactus.html">
+          <span class="pl-1">Contact Us</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="menu mobile">
+      <li class="px-3 py-3">
+
+        <a href="./index.html">
+          <button
+            class="bg-gray-200 hover:bg-orangect hover:text-white my-1 mx-1  px-3 py-2 rounded-full text-gray-400">
+            <p class="">Home</p>
+          </button>
+        </a>
+
+        <a href="./aboutus.html">
+          <button
+            class="bg-gray-200 hover:bg-orangect hover:text-white my-1 mx-1  px-3 py-2 rounded-full text-gray-400">
+            <p class="">About Us</p>
+          </button>
+        </a>
+        <a href="./games.html">
+          <button
+            class="bg-gray-200 hover:bg-orangect hover:text-white my-1 mx-1  px-3 py-2 rounded-full text-gray-400">
+            <p class="">Games</p>
+          </button>
+        </a>
+        <a href="./partnerships.html">
+          <button class="bg-emerald-500 hover:bg-orangectmy-1 mx-1  px-3 py-2  rounded-full text-white">
+            <p class="">Partnerships</p>
+          </button>
+        </a>
+        <a href="./newsevent.html">
+          <button
+            class="bg-gray-200 hover:bg-orangect hover:text-white my-1 mx-1  px-3 py-2 rounded-full text-gray-400">
+            <p class="">News & Events</p>
+          </button>
+        </a>
+        <a href="./contactus.html">
+          <button
+            class="bg-gray-200 hover:bg-orangect hover:text-white my-1 mx-1  px-3 py-2 rounded-full text-gray-400">
+            <p class="">Contact Us</p>
+          </button>
+        </a>
+
+        <!-- <a class="" href="./index.html" id="active">Home</a> -->
+      </li>
+      <!-- <li><a class="" href="./aboutus.html">About Us</a></li>
+      <li><a class="" href="./games.html">Games</a></li>
+      <li><a class="" href="./partnerships.html">Partnerships</a></li>
+      <li><a class="" href="./newsevent.html">News & Events</a></li>
+      <li><a class="" href="./contactus.html">Contact Us</a></li> -->
+    </ul>
+    <ul class="menu tooglemenu">
+      <li class="md:hidden block">
+
+        <div id="accordion-open" data-accordion="open">
+          <h2 id="accordion-open-heading-2">
+            <button type="button"
+              class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+              data-accordion-target="#accordion-open-body-2" aria-expanded="false"
+              aria-controls="accordion-open-body-2">
+              <span class="flex items-center"><svg class="w-5 h-5 mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                    clip-rule="evenodd"></path>
+                </svg>More Info about Licenses</span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-open-body-2" class="hidden" aria-labelledby="accordion-open-heading-2">
+            <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+              <ul class="">
+                <li class="li-tooglemenu">
+                  <div class="a-menu mt-5">
+                    <p>Licenses and Local certificates</p>
+                    <p class="sub-a-menu mt-3">
+                      Evoplay Entertainment™ holds a Curacao gaming license in addition to local gaming
+                      certificates, and complies with all European regulatory requirements.
+                    </p>
+                    <div class="flex-nav items-center justify-left mt-5">
+                      <div class="">
+                        <img class=" w-12 px-3"
+                          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/curasao.png?2" alt="" />
+                      </div>
+                      <div class="">
+                        <img class="w-12 px-3"
+                          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/ecogra.png" alt="" />
+                      </div>
+                      <div class="">
+                        <img class="w-12 px-3"
+                          src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/iso-b-13.svg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="a-menu mt-5">
+                    <br />
+                    <p>Awards & Nominations</p>
+                    <p class="sub-a-menu mt-3">
+                      No stranger to industry awards, Evoplay has been nominated, shortlisted and picked up wins
+                      since we started in 2017. From awards giants SBC and ERG, to G2E Asia and the Spinnovation
+                      Summit, Evoplay always makes the headlines.
+                    </p>
+                  </div>
+
+                  <div class="flex-nav items-center justify-left mt-5">
+                    <div class="">
+                      <img class=" w-12 px-3"
+                        src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/curasao.png?2" alt="" />
+                    </div>
+                    <div class="">
+                      <img class="w-12 px-3"
+                        src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/ecogra.png" alt="" />
+                    </div>
+                    <div class="">
+                      <img class="w-12 px-3"
+                        src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/iso-b-13.svg" alt="" />
+                    </div>
+                  </div>
+                  <div class="flex-nav items-center justify-left mt-5">
+                    <div class="">
+                      <img class=" w-12 px-3"
+                        src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/curasao.png?2" alt="" />
+                    </div>
+                  </div>
+                </li>
+                <li class="li-tooglemenu">
+                  <div class="a-menu">
+                    <div class="grid-rows">
+                      <div class="girditems">
+                        <br />
+                        <div class="flex">
+                          Responsible gaming
+                          <img class="img-flex-menu w-12"
+                            src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/18_plus.svg" alt="" />
+                        </div>
+                        <p class="sub-a-menu mt-3">
+                          Evoplay Entertainment™ takes social responsibility very seriously. To enter the
+                          company's website and play a game demo, you must first confirm that you are of a legal
+                          gambling age in your country.
+                        </p>
+                      </div>
+                      <div class="girditems">
+                        <br />
+                        <div class="flex">
+                          Awards & Nominations
+                          <img class="img-flex-menu w-12"
+                            src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/copyright-ico.svg"
+                            alt="" />
+                        </div>
+                        <p class="sub-a-menu mt-3">
+                          Evoplay Entertainment™ has numerous European-issued patent certificates and will
+                          protect its intellectual property if said property and patents are infringed.
+                        </p>
+                      </div>
+                      <div class="girditems mt-5">
+                        <br />
+                        <div class="flex mb-5">
+                          Responsible gaming
+                          <img class="img-flex-menu w-12"
+                            src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/18_plus.svg" alt="" />
+                        </div>
+                        <form>
+                          <div class="grid grid-cols-2 gap-4">
+                            <div class="mb-3">
+
+                              <input type="text" id="default-input" placeholder="First name"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            </div>
+                            <div class="mb-3">
+
+                              <input type="text" id="default-input" placeholder="Last name"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            </div>
+                          </div>
+                          <div class=" grid grid-cols-1 gap-4">
+                            <div class="">
+                              <div class="relative ">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                                  <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                                    <path
+                                      d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+                                    <path
+                                      d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+                                  </svg>
+                                </div>
+                                <input type="text" id="input-group-1"
+                                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                  placeholder="name@example.com">
+                              </div>
+                            </div>
+                            <div class="mb-3">
+                              <textarea id="message" rows="4"
+                                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Your Message..."></textarea>
+                            </div>
+                          </div>
+                          <div class="">
+                            <button class="btn-sendmessage hover:bg-orangect">Send message</button>
+                            <br /><br /><br />
+                          </div>
+                        </form>
+                      </div>
+                      <div class="girditems md:pb-10  pb-[300px]">
+                        <br />
+
+                        <p style="font-size: 14px">
+                          Send us your enquiries by filling the contact form below and we'll be in touch with
+                          you real soon.
+                        </p>
+                        <div class="flex py-3 items-center">
+                          <img class="img-flex-menusocial w-8 py-3"
+                            src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/mail-ico.svg"
+                            alt="" />
+                          <p class="sub-a-menu">info@evoplay.games</p>
+                        </div>
+                        <p>Follow us</p>
+                        <div class="flex py-3 items-center">
+                          <img class="img-flex-menusocial w-8 py-3"
+                            src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/linkedin-ico.svg"
+                            alt="" />
+                          <p class="sub-a-menu">info@evoplay.games</p>
+                        </div>
+
+                        <div class="flex py-3 items-center">
+                          <img class="img-flex-menusocial w-8"
+                            src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/instagram-ico.svg"
+                            alt="" />
+                          <p class="sub-a-menu">info@evoplay.games</p>
+                        </div>
+
+                        <div class="flex py-3 items-center">
+                          <img class="img-flex-menusocial w-8 py-3"
+                            src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/facebook-ico.svg"
+                            alt="" />
+                          <p class="sub-a-menu">info@evoplay.games</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </li>
+    </ul>
+
+    <ul class="menu tooglemenu md:block hidden">
+      <li class="li-tooglemenu">
+        <div class="a-menu mt-5">
+          <p>Licenses and Local certificates</p>
+          <p class="sub-a-menu mt-3">
+            Evoplay Entertainment™ holds a Curacao gaming license in addition to local gaming
+            certificates, and complies with all European regulatory requirements.
+          </p>
+          <div class="flex-nav items-center justify-left mt-5">
+            <div class="">
+              <img class=" w-12 px-3"
+                src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/curasao.png?2" alt="" />
+            </div>
+            <div class="">
+              <img class="w-12 px-3" src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/ecogra.png"
+                alt="" />
+            </div>
+            <div class="">
+              <img class="w-12 px-3" src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/iso-b-13.svg"
+                alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="a-menu mt-5">
+          <br />
+          <p>Awards & Nominations</p>
+          <p class="sub-a-menu mt-3">
+            No stranger to industry awards, Evoplay has been nominated, shortlisted and picked up wins
+            since we started in 2017. From awards giants SBC and ERG, to G2E Asia and the Spinnovation
+            Summit, Evoplay always makes the headlines.
+          </p>
+        </div>
+
+        <div class="flex-nav items-center justify-left mt-5">
+          <div class="">
+            <img class=" w-12 px-3" src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/curasao.png?2"
+              alt="" />
+          </div>
+          <div class="">
+            <img class="w-12 px-3" src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/ecogra.png"
+              alt="" />
+          </div>
+          <div class="">
+            <img class="w-12 px-3" src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/iso-b-13.svg"
+              alt="" />
+          </div>
+        </div>
+        <div class="flex-nav items-center justify-left mt-5">
+          <div class="">
+            <img class=" w-12 px-3" src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/curasao.png?2"
+              alt="" />
+          </div>
+        </div>
+      </li>
+      <li class="li-tooglemenu">
+        <div class="a-menu">
+          <div class="grid-rows">
+            <div class="girditems">
+              <br />
+              <div class="flex">
+                Responsible gaming
+                <img class="img-flex-menu w-12"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/18_plus.svg" alt="" />
+              </div>
+              <p class="sub-a-menu mt-3">
+                Evoplay Entertainment™ takes social responsibility very seriously. To enter the
+                company's website and play a game demo, you must first confirm that you are of a legal
+                gambling age in your country.
+              </p>
+            </div>
+            <div class="girditems">
+              <br />
+              <div class="flex">
+                Awards & Nominations
+                <img class="img-flex-menu w-12"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/copyright-ico.svg" alt="" />
+              </div>
+              <p class="sub-a-menu mt-3">
+                Evoplay Entertainment™ has numerous European-issued patent certificates and will
+                protect its intellectual property if said property and patents are infringed.
+              </p>
+            </div>
+            <div class="girditems mt-5">
+              <br />
+              <div class="flex mb-5">
+                Responsible gaming
+                <img class="img-flex-menu w-12"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/18_plus.svg" alt="" />
+              </div>
+              <form>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="mb-3">
+
+                    <input type="text" id="default-input" placeholder="First name"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  </div>
+                  <div class="mb-3">
+
+                    <input type="text" id="default-input" placeholder="Last name"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  </div>
+                </div>
+                <div class=" grid grid-cols-1 gap-4">
+                  <div class="">
+                    <div class="relative ">
+                      <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                          <path
+                            d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+                          <path
+                            d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+                        </svg>
+                      </div>
+                      <input type="text" id="input-group-1"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="name@example.com">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <textarea id="message" rows="4"
+                      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="Your Message..."></textarea>
+                  </div>
+                </div>
+                <div class="">
+                  <button class="btn-sendmessage hover:bg-orangect">Send message</button>
+                  <br /><br /><br />
+                </div>
+              </form>
+            </div>
+            <div class="girditems md:pb-10  pb-[300px]">
+              <br />
+
+              <p style="font-size: 14px">
+                Send us your enquiries by filling the contact form below and we'll be in touch with
+                you real soon.
+              </p>
+              <div class="flex py-3 items-center">
+                <img class="img-flex-menusocial w-8 py-3"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/mail-ico.svg" alt="" />
+                <p class="sub-a-menu">info@evoplay.games</p>
+              </div>
+              <p>Follow us</p>
+              <div class="flex py-3 items-center">
+                <img class="img-flex-menusocial w-8 py-3"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/linkedin-ico.svg" alt="" />
+                <p class="sub-a-menu">info@evoplay.games</p>
+              </div>
+
+              <div class="flex py-3 items-center">
+                <img class="img-flex-menusocial w-8"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/instagram-ico.svg" alt="" />
+                <p class="sub-a-menu">info@evoplay.games</p>
+              </div>
+
+              <div class="flex py-3 items-center">
+                <img class="img-flex-menusocial w-8 py-3"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/facebook-ico.svg" alt="" />
+                <p class="sub-a-menu">info@evoplay.games</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="sectionone w-full pt-20">
+    <div class="h-[100vh] flex items-center justify-center"
+      style="background-image: url(https://image.lexica.art/full_jpg/d6c5ef25-ad62-4789-a4b9-5651e0f6faca); ">
+      <div class="text-center">
+        <p class="mb-4 font-bold text-2xl md:text-3xl px-5">
+          <span class="text-white">GET AN </span><span class="text-emerald-500"><span class=""> EXCLUSIVE
+            </span><span class="text-white">OFFER FOR YOUR </span><span class="text-orangect">CASINO</span>
+          </span>
+        </p>
+        <P class="text-white text-center mb-6 md:text-lg px-16 md:px-48 dark:text-gray-400">
+          Experience the smoothest integration with simple API, game hosting, and two wallets:
+          seamless and transfer. You’ll also get HTML5 games that work on any device, 360-degree
+          marketing, and the best personalized partner support in the industry: direct chats are
+          answered 24/7 and within just 15 minutes – giving you industry-leading response times. We
+          also offer English, Russian and Chinese language support.</P>
+        <button 
+          class="transform hover:scale-105 transition duration-300 ease-in-out rounded-md md:text-xl font-bold text-white hover:bg-orangect bg-emerald-500 hover:bg-orangect px-4 py-2">
+          <p class="text-lg">Contact your Key Acount Manager</p>
+
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-20 md:pt-40 px-8 md:px-10 lg:px-40">
+    <div class="text-center">
+      <p class="md:mb-12 md:mb-10 font-bold text-2xl md:text-3xl">
+        <span class="text-orangect">ACTIVE </span> AND
+        <span class="text-emerald-500">
+          <span class="">UPCOMING </span>
+          <span class="text-black">PROMOS</span>
+        </span>
+      </p>
+    </div>
+    <div class="py-10 md:py-20">
+      <div class="grid md:grid-cols-3 grid-cols-1 w-full md:gap-6 lg:gap-10">
+        <div class="">
+          <div class="md:col-span-6 bg-white rounded-md shadow-md">
+            <div class="flex items-center justify-center">
+              <img class="rounded-md"
+                src="https://evoplay.games/wp-content/themes/evoplay/assets/img/promo/promo_september_2023.jpg"
+                alt="" />
+            </div>
+            <div class="">
+              <div class="px-5">
+                <p class="pt-5 font-bold text-lg md:text-lg">
+                  Evoplay scores a double win – gold and bronze!
+                </p>
+
+                <P class="text-sm mb-5  text-gray-500">Evoplay has hit a double win at two high-profile
+                  iGaming....</P>
+                <button  class="transform hover:scale-105 transition duration-300 ease-in-out rounded-md px-4 py-2 text-white bg-emerald-500 hover:bg-orangect mb-5">
+                  <p class="">See More</p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="md:col-span-6 bg-white rounded-md shadow-md">
+            <div class="flex items-center justify-center">
+              <img class="rounded-md"
+                src="https://evoplay.games/wp-content/themes/evoplay/assets/img/promo/promo_august_2023.jpg" alt="" />
+            </div>
+            <div class="">
+              <div class="px-5">
+                <p class="pt-5 font-bold text-lg md:text-lg">
+                  Evoplay scores a double win – gold and bronze!
+                </p>
+
+                <P class="text-sm mb-5  text-gray-500">Evoplay has hit a double win at two high-profile
+                  iGaming....</P>
+                <button  class="transform hover:scale-105 transition duration-300 ease-in-out rounded-md px-4 py-2 text-white bg-emerald-500 hover:bg-orangect mb-5">
+                  <p class="">See More</p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="md:col-span-6 bg-white rounded-md shadow-md">
+            <div class="flex items-center justify-center">
+              <img class="rounded-md"
+                src="https://evoplay.games/wp-content/themes/evoplay/assets/img/promo/promo_september_2023.jpg"
+                alt="" />
+            </div>
+            <div class="">
+              <div class="px-5">
+                <p class="pt-5 font-bold text-lg md:text-lg">
+                  Evoplay scores a double win – gold and bronze!
+                </p>
+
+                <P class="text-sm mb-5  text-gray-500">Evoplay has hit a double win at two high-profile
+                  iGaming....</P>
+                <button  class="transform hover:scale-105 transition duration-300 ease-in-out rounded-md px-4 py-2 text-white bg-emerald-500 hover:bg-orangect mb-5">
+                  <p class="">See More</p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-gray-700 h-screen pb-20 md:pb-40 pt-20 px-5 md:px-40">
+    <div class="text-center">
+      <p class="mb-4 font-bold text-2xl md:text-3xl">
+        <span class="text-white">PAST </span>
+        <span class="text-orangect"><span class="">PROMOTIONS </span> </span>
+      </p>
+    </div>
+
+    <div id="indicators-carousel" class="relative w-full" data-carousel="static">
+      <!-- Carousel wrapper -->
+      <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+          <div 
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">img 1</div>
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="/docs/images/carousel/carousel-2.svg"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="/docs/images/carousel/carousel-3.svg"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="/docs/images/carousel/carousel-4.svg"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 5 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="/docs/images/carousel/carousel-5.svg"
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+      </div>
+      <!-- Slider indicators -->
+      <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+          data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+          data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+          data-carousel-slide-to="2"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+          data-carousel-slide-to="3"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+          data-carousel-slide-to="4"></button>
+      </div>
+      <!-- Slider controls -->
+      <button type="button"
+        class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev>
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M5 1 1 5l4 4" />
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </button>
+      <button type="button"
+        class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next>
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m1 9 4-4-4-4" />
+          </svg>
+          <span class="sr-only">Next</span>
+        </span>
+      </button>
+    </div>
+
+  </div>
+
+  <div class=" pb-20 md:pb-40 pt-20 px-5 md:px-10 lg:px-40">
+    <div class="text-center">
+      <p class="md:mb-20 mb-4 font-bold text-2xl md:text-3xl">
+        <span class="text-black">UPCOMING GAME </span>
+        <span class="text-orangect"><span class="">RELEASES </span> </span>
+      </p>
+    </div>
+
+    <div class="py-8   lg:px-10">
+      <div class="grid grid-cols-1 w-full">
+        <div class="grid md:grid-cols-4 grid-cols-2 w-full gap-2 md:gap-6 lg:gap-10">
+          <div class="transform hover:scale-105 transition duration-300 ease-in-out">
+            <div class="md:col-span-6 bg-white rounded-md shadow-md">
+              <div class="flex items-center justify-center">
+                <img class="rounded-md"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/promo/promo_september_2023.jpg"
+                  alt="" />
+              </div>
+              <div class="">
+                <div class="px-5">
+                  <p class="mt-4 font-bold md:text-lg " customSize="">
+                    Evoplay scores
+                  </p>
+
+                  <P class="mt-1 md:text-sm text-xs mb-5  text-gray-500">Evoplay has hit a double win at two
+                    high-profile iGaming....</P>
+                  <button 
+                    class="transform hover:scale-105 transition duration-300 ease-in-out text-sm  rounded-md px-4 py-2 text-white bg-emerald-500 hover:bg-orangect mb-5">
+                    <p class="">See More</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="transform hover:scale-105 transition duration-300 ease-in-out">
+            <div class="md:col-span-6 bg-white rounded-md shadow-md">
+              <div class="flex items-center justify-center">
+                <img class="rounded-md"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/promo/promo_august_2023.jpg" alt="" />
+              </div>
+              <div class="">
+                <div class="px-5">
+                  <p class="mt-4 font-bold md:text-lg " customSize="">
+                    Evoplay scores
+                  </p>
+
+                  <P class="mt-1 md:text-sm text-xs mb-5  text-gray-500">Evoplay has hit a double win at two
+                    high-profile iGaming....</P>
+                  <button 
+                    class="transform hover:scale-105 transition duration-300 ease-in-out text-sm  rounded-md px-4 py-2 text-white bg-emerald-500 hover:bg-orangect mb-5">
+                    <p class="">See More</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="transform hover:scale-105 transition duration-300 ease-in-out">
+            <div class="md:col-span-6 bg-white rounded-md shadow-md">
+              <div class="flex items-center justify-center">
+                <img class="rounded-md"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/promo/promo_september_2023.jpg"
+                  alt="" />
+              </div>
+              <div class="">
+                <div class="px-5">
+                  <p class="mt-4 font-bold md:text-lg " customSize="">
+                    Evoplay scores
+                  </p>
+
+                  <P class="mt-1 md:text-sm text-xs mb-5  text-gray-500">Evoplay has hit a double win at two
+                    high-profile iGaming....</P>
+                  <button 
+                    class="transform hover:scale-105 transition duration-300 ease-in-out text-sm  rounded-md px-4 py-2 text-white bg-emerald-500 hover:bg-orangect mb-5">
+                    <p class="">See More</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="transform hover:scale-105 transition duration-300 ease-in-out">
+            <div class="md:col-span-6 bg-white rounded-md shadow-md">
+              <div class="flex items-center justify-center">
+                <img class="rounded-md"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/promo/promo_september_2023.jpg"
+                  alt="" />
+              </div>
+              <div class="">
+                <div class="px-5">
+                  <p class="mt-4 font-bold md:text-lg " customSize="">
+                    Evoplay scores
+                  </p>
+
+                  <P class="mt-1 md:text-sm text-xs mb-5  text-gray-500">Evoplay has hit a double win at two
+                    high-profile iGaming....</P>
+                  <button 
+                    class="transform hover:scale-105 transition duration-300 ease-in-out text-sm rounded-md px-4 py-2 text-white bg-emerald-500 hover:bg-orangect mb-5">
+                    <p class="">See More</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="transform hover:scale-105 transition duration-300 ease-in-out">
+            <div class="md:col-span-6 bg-white rounded-md shadow-md">
+              <div class="flex items-center justify-center">
+                <img class="rounded-md"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/promo/promo_september_2023.jpg"
+                  alt="" />
+              </div>
+              <div class="">
+                <div class="px-5">
+                  <p class="mt-4 font-bold md:text-lg " customSize="">
+                    Evoplay scores
+                  </p>
+
+                  <P class="mt-1 md:text-sm text-xs mb-5  text-gray-500">Evoplay has hit a double win at two
+                    high-profile iGaming....</P>
+                  <button 
+                    class="transform hover:scale-105 transition duration-300 ease-in-out text-sm rounded-md px-4 py-2 text-white bg-emerald-500 hover:bg-orangect mb-5">
+                    <p class="">See More</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="transform hover:scale-105 transition duration-300 ease-in-out">
+            <div class="md:col-span-6 bg-white rounded-md shadow-md">
+              <div class="flex items-center justify-center">
+                <img class="rounded-md"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/promo/promo_august_2023.jpg" alt="" />
+              </div>
+              <div class="">
+                <div class="px-5">
+                  <p class="mt-4 font-bold md:text-lg " customSize="">
+                    Evoplay scores
+                  </p>
+
+                  <P class="mt-1 md:text-sm text-xs mb-5  text-gray-500">Evoplay has hit a double win at two
+                    high-profile iGaming....</P>
+                  <button 
+                    class="transform hover:scale-105 transition duration-300 ease-in-out text-sm rounded-md px-4 py-2 text-white bg-emerald-500 hover:bg-orangect mb-5">
+                    <p class="">See More</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="transform hover:scale-105 transition duration-300 ease-in-out ">
+            <div class="md:col-span-6 bg-white rounded-md shadow-md">
+              <div class="flex items-center justify-center">
+                <img class="rounded-md"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/promo/promo_september_2023.jpg"
+                  alt="" />
+              </div>
+              <div class="">
+                <div class="px-5">
+                  <p class="mt-4 font-bold md:text-lg " customSize="">
+                    Evoplay scores
+                  </p>
+
+                  <P class="mt-1 md:text-sm text-xs mb-5  text-gray-500">Evoplay has hit a double win at two
+                    high-profile iGaming....</P>
+                  <button 
+                    class="transform hover:scale-105 transition duration-300 ease-in-out text-sm rounded-md px-4 py-2 text-white bg-emerald-500 hover:bg-orangect mb-5">
+                    <p class="">See More</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="transform hover:scale-105 transition duration-300 ease-in-out ">
+            <div class="md:col-span-6 bg-white rounded-md shadow-md">
+              <div class="flex items-center justify-center">
+                <img class="rounded-md"
+                  src="https://evoplay.games/wp-content/themes/evoplay/assets/img/promo/promo_september_2023.jpg"
+                  alt="" />
+              </div>
+              <div class="">
+                <div class="px-5">
+                  <p class="mt-4 font-bold md:text-lg " customSize="">
+                    Evoplay scores
+                  </p>
+
+                  <P class="mt-1 md:text-sm text-xs mb-5  text-gray-500">Evoplay has hit a double win at two
+                    high-profile iGaming....</P>
+                  <button 
+                    class="transform hover:scale-105 transition duration-300 ease-in-out text-sm rounded-md px-4 py-2 text-white bg-emerald-500 hover:bg-orangect mb-5">
+                    <p class="">See More</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="bg-black pb-5 pt-20 px-10 lg:px-40">
+      <div class="text-center">
+        <p class="mb-4 font-bold text-2xl md:text-3xl">
+          <span class="text-white">WHY</span>
+          <span class="text-emerald-500">PARTNERSHIPS </span>
+          <span class="text-orangect"><span class="">MATTER </span> </span>
+        </p>
+
+        <P class="text-sm md:text-md text-center mb-6 text-gray-400 mt-2 lg:px-40">We offer partner services that are
+          second to none. No
+          request is too big or too small. Our
+          Key Account team offer a personalized service designed to help you succeed, and our
+          Marketing team generates campaigns that will attract new users to your platform. And our
+          games… they ensure your users stay and play.</P>
+      </div>
+
+      <div class="py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 px-5 lg:px-10">
+          <div class="">
+            <div class="grid grid-cols-1 gap-4">
+              <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
+                <div class="col-span-2 ">
+                  <Heading tag="h2" class="mb-4 text-white" customSize=" md:text-5xl lg:text-xl ">MARKETING TOOLS
+                  </Heading>
+                  <p class="text-gray-400">
+                    Evoplay is an award-winning iGaming development studio. We do things a little
+                    differently. We think we do them better. That means more than just making great
+                    games. It means providing the best service behind those games, too.
+                  </p>
+                </div>
+                <div class="flex items-center justify-center">
+                  <img src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/icon_who-4.svg" alt=""
+                    class="w-[100px] md:w-[150px] transform hover:scale-105 transition duration-300 ease-in-out" />
+                </div>
+              </div>
+
+              <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
+                <div class="col-span-2  md:pt-5">
+                  <Heading tag="h2" class="mb-4 text-white" customSize=" md:text-5xl lg:text-xl">PROMO TOOLS</Heading>
+                  <p class="text-gray-400">
+                    We continue to build on our incredible portfolio – from first-to-market
+                    innovations to beautiful versions of the games people know and love. We provide
+                    online casinos with video slots, table, classic and instant games.
+                  </p>
+                </div>
+                <div class="flex items-center justify-center">
+                  <img src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/icon_what.svg" alt=""
+                    class="w-[100px] md:w-[150px] transform hover:scale-105 transition duration-300 ease-in-out" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-center">
+            <img src='../assets/img/Hyper.png' alt="" />
+          </div>
+          <div class="">
+            <div class="grid grid-cols-1 gap-4">
+              <div class="grid md:grid-cols-3 grid-cols-1 gap-4">
+                <div class="flex items-center justify-center">
+                  <img src="https://evoplay.games/wp-content/themes/evoplay/assets/img/icons/icon_why.svg" alt=""
+                    class="w-[100px] md:w-[150px] transform hover:scale-105 transition duration-300 ease-in-out" />
+                </div>
+                <div class="col-span-2 ">
+                  <Heading tag="h2" class="mb-4 text-white" customSize=" md:text-5xl lg:text-xl">ACCOUNT MANAGEMENT
+                    SUPPOR</Heading>
+                  <p class="text-gray-400">
+                    The iGaming world is fun. It’s an exciting and fast-changing industry. It never
+                    sits still, and that fits well with Evoplay’s drive to be quick to market, agile
+                    in our game development, and world class in our marketing and account management.
+                  </p>
+
+                  <p class="text-gray-400">
+                    The iGaming world is fun. It’s an exciting and fast-changing industry. It never
+                    sits still, and that fits well with Evoplay’s drive to be quick to market, agile
+                    in our game development, and world class in our marketing and account management.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER -->
+  <div class="bg-[#000] text-zinc-50 w-full h-full px-10 lg:px-40 py-10">
+    <div class=" grid grid-cols-1 md:grid-cols-4">
+      <div class="">
+        <img src="./assets/img/newlogo.gif" class="mr-3 lg:h-12 h-10" alt="Logo" />
+        <div class="mt-10">
+          Miniluck © 2023. <br />
+          All rights reserved.
+        </div>
+        <div class="my-5 md:my-10 flex gap-6">
+          <div class="flex gap-4 w-full text-sm mb-2">
+            <div class="flex items-center">
+              <div class="transform hover:scale-105 transition duration-300 ease-in-out bg-emerald-500 hover:bg-orangect rounded-full my-2 p-2 mr-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-facebook">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="transform hover:scale-105 transition duration-300 ease-in-out bg-emerald-500 hover:bg-orangect rounded-full my-2 p-2 mr-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-instagram">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="transform hover:scale-105 transition duration-300 ease-in-out bg-emerald-500 hover:bg-orangect rounded-full my-2 p-2 mr-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-mail">
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <p class="text-gray-300 font-bold">Menu</p>
+        <div class="mt-5">
+          <ul>
+            <li>Home</li>
+            <li>Games</li>
+            <li>Partnerships</li>
+            <li>News & Event</li>
+            <li>Contact Us</li>
+          </ul>
+        </div>
+      </div>
+      <div class="">
+        <p class="text-gray-300 font-bold">Games</p>
+
+        <div class="mt-5 flex flex-wrap gap-4">
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-20 rounded-md shadow-md"
+              src="https://evoplay.games/wp-content/uploads/2023/01/Megagreatestcatchbonus_580x580-1.jpg" alt="" />
+          </div>
+
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-20 rounded-md shadow-md"
+              src="https://evoplay.games/wp-content/uploads/2021/03/PenaltyShootOut_270x270.jpg" alt="" />
+          </div>
+
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-20 rounded-md shadow-md" src="https://evoplay.games/wp-content/uploads/2021/09/580x580.jpg"
+              alt="" />
+          </div>
+
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-20 rounded-md shadow-md"
+              src="https://evoplay.games/wp-content/uploads/2023/01/treasuresnipes_270x270.jpg" alt="" />
+          </div>
+
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-20 rounded-md shadow-md"
+              src="https://evoplay.games/wp-content/uploads/2021/03/LegendOfKaan_270x270.jpg" alt="" />
+          </div>
+
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-20 rounded-md shadow-md"
+              src="https://evoplay.games/wp-content/uploads/2022/07/hotvolkano_270x270.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-10 lg:mt-0">
+        <p class="text-gray-300 font-bold ">Licenses & Certificates</p>
+
+        <div class="mt-5 flex flex-wrap justify-center gap-4">
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-20 rounded-md shadow-md"
+              src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/ecogra.png" alt="" />
+          </div>
+
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-10 rounded-md shadow-md"
+              src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/iso-b-13.svg" alt="" />
+          </div>
+
+          <div class="flex items-center justify-left transform hover:scale-105 transition duration-300 ease-in-out">
+            <img class="w-10 rounded-md shadow-md"
+              src="https://evoplay.games/wp-content/themes/evoplay/assets/img/logos/curasao.png?2" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='pre-loader'>
+    <img class='loading-gif' alt='loading' src="https://media0.giphy.com/media/11FuEnXyGsXFba/source.gif" />
+  </div>
+  <script type='text/javascript'>
+    window.addEventListener('load', function () {
+      document.querySelector('.pre-loader').className += ' hidden';
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+</body>
+
+</html>

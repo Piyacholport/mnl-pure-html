@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniLuck</title>
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #000;
+    }
+
+    #toTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 20px;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .draggable {
+      user-select: none;
+    }
+    .imgtotp{
+      width: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="toTop" class="draggable">
+    <img class="imgtotp" src="https://images.vexels.com/media/users/3/185202/isolated/preview/04210f166dee214fc751791106b453b2-donut-pink-syrup-icon.png" alt="">
+  </div>
+  <script>
+    const toTop = document.getElementById('toTop');
+
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    toTop.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      const { left, top } = toTop.getBoundingClientRect();
+      offsetX = e.clientX - left;
+      offsetY = e.clientY - top;
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      toTop.style.left = e.clientX - offsetX + 'px';
+      toTop.style.top = e.clientY - offsetY + 'px';
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+  </script>
+
+</body>
+
+</html>
