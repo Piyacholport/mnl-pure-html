@@ -35,7 +35,8 @@
     .draggable {
       user-select: none;
     }
-    .imgtotp{
+
+    .imgtotp {
       width: 150px;
     }
   </style>
@@ -43,30 +44,49 @@
 
 <body>
   <div id="toTop" class="draggable">
-    <img class="imgtotp" src="https://images.vexels.com/media/users/3/185202/isolated/preview/04210f166dee214fc751791106b453b2-donut-pink-syrup-icon.png" alt="">
+    <img class="imgtotp"
+      src="https://images.vexels.com/media/users/3/185202/isolated/preview/04210f166dee214fc751791106b453b2-donut-pink-syrup-icon.png"
+      alt="">
   </div>
   <script>
+    // const toTop = document.getElementById('toTop');
+
+    // let isDragging = false;
+    // let offsetX, offsetY;
+
+    // toTop.addEventListener('mousedown', (e) => {
+    //   isDragging = true;
+    //   const { left, top } = toTop.getBoundingClientRect();
+    //   offsetX = e.clientX - left;
+    //   offsetY = e.clientY - top;
+    // });
+
+    // document.addEventListener('mousemove', (e) => {
+    //   if (!isDragging) return;
+    //   toTop.style.left = e.clientX - offsetX + 'px';
+    //   toTop.style.top = e.clientY - offsetY + 'px';
+    // });
+
+    // document.addEventListener('mouseup', () => {
+    //   isDragging = false;
+    // });
     const toTop = document.getElementById('toTop');
 
-    let isDragging = false;
-    let offsetX, offsetY;
-
-    toTop.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      const { left, top } = toTop.getBoundingClientRect();
-      offsetX = e.clientX - left;
-      offsetY = e.clientY - top;
+    toTop.addEventListener('dragstart', (e) => {
+      e.dataTransfer.setData('text/plain', ''); // ต้องระบุตัวแปรข้อมูลโดยทึบเป็นสตริงเปล่า
     });
 
-    document.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-      toTop.style.left = e.clientX - offsetX + 'px';
-      toTop.style.top = e.clientY - offsetY + 'px';
+    toTop.addEventListener('dragover', (e) => {
+      e.preventDefault(); // ต้องยกเลิกการดำเนินการเริ่มต้นที่อนุญาตให้วางลง
     });
 
-    document.addEventListener('mouseup', () => {
-      isDragging = false;
+    toTop.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const { clientX, clientY } = e;
+      toTop.style.left = clientX - toTop.offsetWidth / 2 + 'px';
+      toTop.style.top = clientY - toTop.offsetHeight / 2 + 'px';
     });
+
 
   </script>
 
