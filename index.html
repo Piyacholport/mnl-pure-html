@@ -8,141 +8,51 @@
   <script src="https://cdn.jsdelivr.net/npm/hammerjs"></script>
 
 
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .draggable-button {
-      cursor: grab;
-      user-select: none;
-      position: absolute;
-      width: 150px;
-      height: 50px;
-      background-color: #3498db;
-      border: 1px solid #2980b9;
-      border-radius: 5px;
-      text-align: center;
-      line-height: 50px;
-      color: #fff;
-      left: 50px;
-      /* ตำแหน่งเริ่มต้นในแกน X */
-      top: 50px;
-      /* ตำแหน่งเริ่มต้นในแกน Y */
-    }
-
-    button {
-      background: none;
-      border: none;
-      color: inherit;
-      font: inherit;
-      cursor: inherit;
-      outline: inherit;
-    }
-  </style>
+<style>
+  #box {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+}
+</style>
 </head>
 
 <body>
-  <div class="draggable-button" id="drag-button">
-    <button id="button">ลากฉัน</button>
+  <div id="container">
+    <p>Toggle your browser device toolbar and change device to any mobile or tablet from your browser inspect.</p>
+    <div id="box"></div>
   </div>
   <script>
-    // const dragButton = document.getElementById("drag-button");
-
-    // let isDragging = false;
-    // let offsetX, offsetY;
-
-    // dragButton.addEventListener("mousedown", (e) => {
-    //   isDragging = true;
-    //   offsetX = e.clientX - dragButton.getBoundingClientRect().left;
-    //   offsetY = e.clientY - dragButton.getBoundingClientRect().top;
-    //   dragButton.style.cursor = "grabbing";
-    // });
-
-    // document.addEventListener("mousemove", (e) => {
-    //   if (isDragging) {
-    //     const x = e.clientX - offsetX;
-    //     const y = e.clientY - offsetY;
-    //     dragButton.style.transform = `translate(${x}px, ${y}px)`;
-    //   }
-    // });
-
-    // document.addEventListener("mouseup", () => {
-    //   if (isDragging) {
-    //     isDragging = false;
-    //     dragButton.style.cursor = "grab";
-    //   }
-    // });
-
-
-    // const dragButton = document.getElementById("drag-button");
-
-    // let isDragging = false;
-    // let offsetX, offsetY;
-
-    // dragButton.addEventListener("mousedown", (e) => {
-    //   isDragging = true;
-    //   offsetX = e.clientX - dragButton.getBoundingClientRect().left;
-    //   offsetY = e.clientY - dragButton.getBoundingClientRect().top;
-    //   dragButton.style.cursor = "grabbing";
-    // });
-
-    // document.addEventListener("mousemove", (e) => {
-    //   if (isDragging) {
-    //     const x = e.clientX - offsetX;
-    //     const y = e.clientY - offsetY;
-    //     dragButton.style.transform = `translate(${x}px, ${y}px)`;
-    //   }
-    // });
-
-    // document.addEventListener("mouseup", () => {
-    //   if (isDragging) {
-    //     isDragging = false;
-    //     dragButton.style.cursor = "grab";
-    //   }
-    // });
-
-    const dragButton = document.getElementById("drag-button");
-
-    let isDragging = false;
-    let offsetX, offsetY;
-
-    // ตำแหน่งเริ่มต้นในแกน X และ Y
-    const initialX = 50;
-    const initialY = 50;
-
-    // ตั้งค่าเริ่มต้น
-    dragButton.style.left = `${initialX}px`;
-    dragButton.style.top = `${initialY}px`;
-
-    dragButton.addEventListener("mousedown", (e) => {
-      isDragging = true;
-      offsetX = e.clientX - dragButton.getBoundingClientRect().left;
-      offsetY = e.clientY - dragButton.getBoundingClientRect().top;
-      dragButton.style.cursor = "grabbing";
-    });
-
-    document.addEventListener("mousemove", (e) => {
-      if (isDragging) {
-        const x = e.clientX - offsetX;
-        const y = e.clientY - offsetY;
-        dragButton.style.transform = `translate(${x}px, ${y}px)`;
-      }
-    });
-
-    document.addEventListener("mouseup", () => {
-      if (isDragging) {
-        isDragging = false;
-        dragButton.style.cursor = "grab";
-      }
-    });
-
+    window.onload = function() {
+  // find the element that you want to drag.
+  var box = document.getElementById('box');
+  
+  /* listen to the touchMove event,
+  every time it fires, grab the location
+  of touch and assign it to box */
+  
+  box.addEventListener('touchmove', function(e) {
+    // grab the location of touch
+    var touchLocation = e.targetTouches[0];
+    
+    // assign box new coordinates based on the touch.
+    box.style.left = touchLocation.pageX + 'px';
+    box.style.top = touchLocation.pageY + 'px';
+  })
+  
+  /* record the position of the touch
+  when released using touchend event.
+  This will be the drop position. */
+  
+  box.addEventListener('touchend', function(e) {
+    // current box position.
+    var x = parseInt(box.style.left);
+    var y = parseInt(box.style.top);
+  })
+  
+}
   </script>
-
 </body>
 
 </html>
