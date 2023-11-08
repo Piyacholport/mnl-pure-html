@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Draggable Button</title>
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      background-color: black;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .draggable-button {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      border-radius: 50%;
+      cursor: grab;
+      user-drag: none;
+      touch-action: none;
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      /* pointer-events: none; */
+      pointer-events: stroke;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="allcontent">
+    <div class="container">
+      <button class="draggable-button" id="draggableButton">Drag Me</button>
+    </div>
+  </div>
+  <!-- <script>
+    const draggableButton = document.getElementById('draggableButton');
+    let isDragging = false;
+    let offsetX, offsetY;
+
+
+    draggableButton.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      const touch = e.touches[0];
+      offsetX = touch.clientX - draggableButton.getBoundingClientRect().left;
+      offsetY = touch.clientY - draggableButton.getBoundingClientRect().top;
+      draggableButton.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('touchmove', (e) => {
+      if (isDragging) {
+        const container = document.querySelector('.container');
+        const maxX = container.clientWidth - draggableButton.clientWidth;
+        const maxY = container.clientHeight - draggableButton.clientHeight;
+        const touch = e.touches[0];
+        let x = touch.clientX - container.getBoundingClientRect().left - offsetX;
+        let y = touch.clientY - container.getBoundingClientRect().top - offsetY;
+
+        x = Math.min(maxX, Math.max(0, x));
+        y = Math.min(maxY, Math.max(0, y));
+
+        draggableButton.style.left = x + 'px';
+        draggableButton.style.top = y + 'px';
+      }
+    });
+
+    document.addEventListener('touchend', () => {
+      isDragging = false;
+      draggableButton.style.cursor = 'grab';
+    });
+
+    draggableButton.addEventListener('dragstart', (e) => {
+      e.preventDefault();
+    });
+
+
+    // mouse
+
+    draggableButton.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      offsetX = e.clientX - draggableButton.getBoundingClientRect().left;
+      offsetY = e.clientY - draggableButton.getBoundingClientRect().top;
+      draggableButton.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        const container = document.querySelector('.container');
+        const maxX = container.clientWidth - draggableButton.clientWidth;
+        const maxY = container.clientHeight - draggableButton.clientHeight;
+        let x = e.clientX - container.getBoundingClientRect().left - offsetX;
+        let y = e.clientY - container.getBoundingClientRect().top - offsetY;
+
+        x = Math.min(maxX, Math.max(0, x));
+        y = Math.min(maxY, Math.max(0, y));
+
+        draggableButton.style.left = x + 'px';
+        draggableButton.style.top = y + 'px';
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      draggableButton.style.cursor = 'grab';
+    });
+
+    draggableButton.addEventListener('dragstart', (e) => {
+      e.preventDefault();
+    });
+
+  </script> -->
+
+  <script>
+    const draggableButton = document.getElementById('draggableButton');
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    // ตำแหน่งเริ่มต้นของปุ่ม
+    const initialButtonPosition = { top: 'auto', bottom: '10px', left: 'auto', right: '10px' };
+
+    draggableButton.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      offsetX = e.clientX - draggableButton.getBoundingClientRect().left;
+      offsetY = e.clientY - draggableButton.getBoundingClientRect().top;
+      draggableButton.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        const container = document.querySelector('.container');
+        const maxX = container.clientWidth - draggableButton.clientWidth;
+        const maxY = container.clientHeight - draggableButton.clientHeight;
+        let x = e.clientX - container.getBoundingClientRect().left - offsetX;
+        let y = e.clientY - container.getBoundingClientRect().top - offsetY;
+
+        x = Math.min(maxX, Math.max(0, x));
+        y = Math.min(maxY, Math.max(0, y));
+
+        draggableButton.style.left = x + 'px';
+        draggableButton.style.top = y + 'px';
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      draggableButton.style.cursor = 'grab';
+
+      // ตรวจสอบการคลิกและไม่มีการลาก
+      if (isDragging = false) {
+        console.log('hello');
+        // กำหนดตำแหน่งเริ่มต้นของปุ่ม
+        draggableButton.style.top = initialButtonPosition.top;
+        draggableButton.style.bottom = initialButtonPosition.bottom;
+        draggableButton.style.left = initialButtonPosition.left;
+        draggableButton.style.right = initialButtonPosition.right;
+      }
+    });
+
+    draggableButton.addEventListener('dragstart', (e) => {
+      e.preventDefault();
+    });
+
+  </script>
+</body>
+
+</html>
