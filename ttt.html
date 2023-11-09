@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script src="./assets/js/miniluck.js"></script> -->
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+    }
+    .iframe {
+      width: 100%;
+      height: 100vh;
+      background-color: black;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+    .if{
+      width: 240px;
+      height: 192px;
+  
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      pointer-events: stroke;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="iframe">
+    <iframe class="if" src="http://192.168.1.43:8080/?name=dt&lang=th" frameborder="0" ></iframe>
+  </div>
+</body>
+
+</html>
