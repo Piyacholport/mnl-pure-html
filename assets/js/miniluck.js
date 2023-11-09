@@ -57,16 +57,15 @@ buttonElement.style.position = `absolute`;
 buttonElement.style.bottom = `20px`;
 buttonElement.style.right = `20px`;
 buttonElement.style.pointerEvents = `stroke`;
-buttonElement.onclick = function() {
-    alert(`Welcome Miniluck!`);
-};
+
 
 // สร้าง div แรก (divFirst)
 const divFirst = document.createElement('div');
 divFirst.id = 'divFirst';
 
 divFirst.style.height = defaultHeight;
-
+divFirst.style.width = '320px';
+divFirst.style.height = '256px';
 divFirst.style.position = 'absolute';
 divFirst.style.backgroundColor = 'transparent';
 divFirst.style.left = '50%';
@@ -83,10 +82,10 @@ divFirst.appendChild(iframeElement);
 
 const divSecond = document.createElement('div');
 divSecond.id = 'divSecond';
-divSecond.style.width = '100px';
-divSecond.style.height = '100px';
+divSecond.style.width = '320px';
+divSecond.style.height = '256px';
 divSecond.style.position = 'absolute';
-divSecond.style.backgroundColor = 'green';
+divSecond.style.backgroundColor = 'transparent';
 divSecond.style.left = '50%';
 divSecond.style.top = '50%';
 divSecond.style.transform = 'translate(-50%, -50%)';
@@ -111,8 +110,6 @@ divElement.appendChild(divSecond);
 divElement.appendChild(buttonElement);
 document.body.appendChild(divElement);
 
-
-
 console.log(
     "newWidth",window.innerWidth,"\n",
     "newHeight",window.innerHeight,"\n",
@@ -128,3 +125,9 @@ console.log(
     "y",y,"\n"
     
 );
+
+buttonElement.onclick = function() {
+    // alert(`Welcome Miniluck!`);
+	divElement.appendChild(divFirst);
+	divElement.appendChild(divSecond);
+};
