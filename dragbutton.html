@@ -1,86 +1,326 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
+<style>
+  body,
+  html {
+    height: 100%;
+    margin: 0 !important;
+    padding: 0;
+  }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Draggable Button</title>
-  <style>
-    body,
-    html {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
+  .dragbtn {
+    cursor: grab;
+  }
 
-    .container {
-      width: 100%;
-      height: 100vh;
-      background-color: black;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: flex-end;
-    }
+  .grid-container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: transparent;
+    pointer-events: none;
 
-    .draggable-button {
-      width: 100px;
-      height: 100px;
-      background-color: blue;
-      border-radius: 50%;
-      cursor: grab;
-      user-drag: none;
-      touch-action: none;
-      position: absolute;
-      bottom: 0px;
-      right: 0px;
-      /* pointer-events: none; */
-      pointer-events: stroke;
-    }
-  </style>
-</head>
+  }
+
+  #lefttop {
+    /* background-color: pink; */
+    background: transparent;
+    display: flex;
+    align-items: start;
+    justify-content: left;
+    pointer-events: none;
+  }
+
+  #centertop {
+    background-color: palegreen;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  #righttop {
+    background-color: black;
+    display: flex;
+    align-items: start;
+    justify-content: right;
+    pointer-events: none;
+  }
+
+
+  #leftmiddle {
+    background-color: brown;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    pointer-events: none;
+  }
+
+  #centermiddle {
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  #rightmiddle {
+    background-color: royalblue;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    pointer-events: none;
+  }
+
+  #leftbottom {
+    background-color: blue;
+    display: flex;
+    align-items: end;
+    justify-content: left;
+    pointer-events: none;
+  }
+
+  #centerbottom {
+    background: transparent;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  #rightbottom {
+    /* background-color: red; */
+    background: transparent;
+    display: flex;
+    align-items: end;
+    justify-content: right;
+    pointer-events: none;
+  }
+
+  .divbtn {
+    background-color: pink;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    pointer-events: stroke;
+  }
+
+  .ad {
+    position: relative;
+  }
+
+  .nd {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: yellow;
+    z-index: 999999999999 !important;
+  }
+</style>
 
 <body>
-  <div class="allcontent">
-    <div class="container">
-      <button class="draggable-button" id="draggableButton">Drag Me</button>
-    </div>
+  <div class="nd" id="nd">aa</div>
+  <div class="ad">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem impedit voluptate minima
+    adipisci sapiente explicabo, accusamus quo tempora dolorem quam at natus delectus voluptates ea consectetur! Dicta
+    obcaecati natus et.
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, iusto tempora! Eveniet enim placeat quaerat
+    explicabo totam doloribus asperiores, excepturi aspernatur quas eligendi, sequi sunt reprehenderit officia,
+    laboriosam expedita sit!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto tenetur repellendus ducimus, necessitatibus
+    praesentium consequatur incidunt quaerat, suscipit ipsam quia maiores reiciendis? Accusantium, vitae odio. Ipsum,
+    ipsa perspiciatis! Ad, ab!Lorem
+
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem impedit voluptate minima
+    adipisci sapiente explicabo, accusamus quo tempora dolorem quam at natus delectus voluptates ea consectetur! Dicta
+    obcaecati natus et.
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, iusto tempora! Eveniet enim placeat quaerat
+    explicabo totam doloribus asperiores, excepturi aspernatur quas eligendi, sequi sunt reprehenderit officia,
+    laboriosam expedita sit!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto tenetur repellendus ducimus, necessitatibus
+    praesentium consequatur incidunt quaerat, suscipit ipsam quia maiores reiciendis? Accusantium, vitae odio. Ipsum,
+    ipsa perspiciatis! Ad, ab!Lorem
+
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem impedit voluptate minima
+    adipisci sapiente explicabo, accusamus quo tempora dolorem quam at natus delectus voluptates ea consectetur! Dicta
+    obcaecati natus et.
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, iusto tempora! Eveniet enim placeat quaerat
+    explicabo totam doloribus asperiores, excepturi aspernatur quas eligendi, sequi sunt reprehenderit officia,
+    laboriosam expedita sit!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto tenetur repellendus ducimus, necessitatibus
+    praesentium consequatur incidunt quaerat, suscipit ipsam quia maiores reiciendis? Accusantium, vitae odio. Ipsum,
+    ipsa perspiciatis! Ad, ab!Lorem
+
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem impedit voluptate minima
+    adipisci sapiente explicabo, accusamus quo tempora dolorem quam at natus delectus voluptates ea consectetur! Dicta
+    obcaecati natus et.
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, iusto tempora! Eveniet enim placeat quaerat
+    explicabo totam doloribus asperiores, excepturi aspernatur quas eligendi, sequi sunt reprehenderit officia,
+    laboriosam expedita sit!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto tenetur repellendus ducimus, necessitatibus
+    praesentium consequatur incidunt quaerat, suscipit ipsam quia maiores reiciendis? Accusantium, vitae odio. Ipsum,
+    ipsa perspiciatis! Ad, ab!Lorem
+
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem impedit voluptate minima
+    adipisci sapiente explicabo, accusamus quo tempora dolorem quam at natus delectus voluptates ea consectetur! Dicta
+    obcaecati natus et.
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, iusto tempora! Eveniet enim placeat quaerat
+    explicabo totam doloribus asperiores, excepturi aspernatur quas eligendi, sequi sunt reprehenderit officia,
+    laboriosam expedita sit!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto tenetur repellendus ducimus, necessitatibus
+    praesentium consequatur incidunt quaerat, suscipit ipsam quia maiores reiciendis? Accusantium, vitae odio. Ipsum,
+    ipsa perspiciatis! Ad, ab!Lorem
+
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem impedit voluptate minima
+    adipisci sapiente explicabo, accusamus quo tempora dolorem quam at natus delectus voluptates ea consectetur! Dicta
+    obcaecati natus et.
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, iusto tempora! Eveniet enim placeat quaerat
+    explicabo totam doloribus asperiores, excepturi aspernatur quas eligendi, sequi sunt reprehenderit officia,
+    laboriosam expedita sit!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto tenetur repellendus ducimus, necessitatibus
+    praesentium consequatur incidunt quaerat, suscipit ipsam quia maiores reiciendis? Accusantium, vitae odio. Ipsum,
+    ipsa perspiciatis! Ad, ab!Lorem
+
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem impedit voluptate minima
+    adipisci sapiente explicabo, accusamus quo tempora dolorem quam at natus delectus voluptates ea consectetur! Dicta
+    obcaecati natus et.
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, iusto tempora! Eveniet enim placeat quaerat
+    explicabo totam doloribus asperiores, excepturi aspernatur quas eligendi, sequi sunt reprehenderit officia,
+    laboriosam expedita sit!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto tenetur repellendus ducimus, necessitatibus
+    praesentium consequatur incidunt quaerat, suscipit ipsam quia maiores reiciendis? Accusantium, vitae odio. Ipsum,
+    ipsa perspiciatis! Ad, ab!Lorem
+
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem impedit voluptate minima
+    adipisci sapiente explicabo, accusamus quo tempora dolorem quam at natus delectus voluptates ea consectetur! Dicta
+    obcaecati natus et.
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, iusto tempora! Eveniet enim placeat quaerat
+    explicabo totam doloribus asperiores, excepturi aspernatur quas eligendi, sequi sunt reprehenderit officia,
+    laboriosam expedita sit!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto tenetur repellendus ducimus, necessitatibus
+    praesentium consequatur incidunt quaerat, suscipit ipsam quia maiores reiciendis? Accusantium, vitae odio. Ipsum,
+    ipsa perspiciatis! Ad, ab!Lorem
+
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem impedit voluptate minima
+    adipisci sapiente explicabo, accusamus quo tempora dolorem quam at natus delectus voluptates ea consectetur! Dicta
+    obcaecati natus et.
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, iusto tempora! Eveniet enim placeat quaerat
+    explicabo totam doloribus asperiores, excepturi aspernatur quas eligendi, sequi sunt reprehenderit officia,
+    laboriosam expedita sit!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto tenetur repellendus ducimus, necessitatibus
+    praesentium consequatur incidunt quaerat, suscipit ipsam quia maiores reiciendis? Accusantium, vitae odio. Ipsum,
+    ipsa perspiciatis! Ad, ab!Lorem
+
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem impedit voluptate minima
+    adipisci sapiente explicabo, accusamus quo tempora dolorem quam at natus delectus voluptates ea consectetur! Dicta
+    obcaecati natus et.
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, iusto tempora! Eveniet enim placeat quaerat
+    explicabo totam doloribus asperiores, excepturi aspernatur quas eligendi, sequi sunt reprehenderit officia,
+    laboriosam expedita sit!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto tenetur repellendus ducimus, necessitatibus
+    praesentium consequatur incidunt quaerat, suscipit ipsam quia maiores reiciendis? Accusantium, vitae odio. Ipsum,
+    ipsa perspiciatis! Ad, ab!Lorem
   </div>
 
+  <div class="grid-container">
+
+    <div class="droptarget" id="lefttop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="droptarget" id="centertop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="droptarget" id="righttop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="droptarget" id="leftmiddle" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="droptarget" id="centermiddle" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="droptarget" id="rightmiddle" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="droptarget" id="leftbottom" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="droptarget" id="centerbottom" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div class="droptarget" id="rightbottom" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="divbtn" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">
+        <img src="./assets/img/edit.gif" alt="" style="width: 80px; height: 80px;" id="mascot">
+      </div>
+    </div>
+  </div>
   <script>
-    const draggableButton = document.getElementById('draggableButton');
-    let isDragging = false;
-    let offsetX, offsetY;
+    const mascot = document.getElementById('mascot');
+    const nd = document.getElementById('nd');
 
-    // ตำแหน่งเริ่มต้นของปุ่ม
-    const initialButtonPosition = { top: 'auto', bottom: '10px', left: 'auto', right: '10px' };
+    const lefttop = document.getElementById('lefttop');
+    const centertop = document.getElementById('centertop');
+    const righttop = document.getElementById('righttop');
 
-    draggableButton.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      offsetX = e.clientX - draggableButton.getBoundingClientRect().left;
-      offsetY = e.clientY - draggableButton.getBoundingClientRect().top;
-      draggableButton.style.cursor = 'grabbing';
-    });
+    const leftmiddle = document.getElementById('leftmiddle');
+    const centermiddle = document.getElementById('centermiddle');
+    const rightmiddle = document.getElementById('rightmiddle');
 
-    document.addEventListener('mousemove', (e) => {
-      if (isDragging) {
-        const container = document.querySelector('.container');
-        const maxX = container.clientWidth - draggableButton.clientWidth;
-        const maxY = container.clientHeight - draggableButton.clientHeight;
-        let x = e.clientX - container.getBoundingClientRect().left - offsetX;
-        let y = e.clientY - container.getBoundingClientRect().top - offsetY;
+    const leftbottom = document.getElementById('leftbottom');
+    const centerbottom = document.getElementById('centerbottom');
+    const rightbottom = document.getElementById('rightbottom');
 
-        x = Math.min(maxX, Math.max(0, x));
-        y = Math.min(maxY, Math.max(0, y));
+    const rect = centermiddle.getBoundingClientRect();
+    // const newDiv = document.createElement('div');
+    // newDiv.style.width = '50px';
+    // newDiv.style.height = '50px';
+    // newDiv.style.background = 'red';
+    // newDiv.style.zIndex = '99999999';
+    // newDiv.style.position = 'absolute';
+    // document.body.appendChild(newDiv);
+    const x = rect.left + window.pageXOffset;
+    const y = rect.top + window.pageYOffset;
+    console.log(`x: ${x}, y: ${y}`);
+    nd.style.top = `${y}px`;
+    nd.style.left = `${x}px`;
 
-        draggableButton.style.left = x + 'px';
-        draggableButton.style.top = y + 'px';
-      }
-    });
-    draggableButton.addEventListener('dragstart', (e) => {
-      e.preventDefault();
-    });
+
+    function dragStart(event) {
+
+    }
+    function dragging(event) {
+
+    }
+    function allowDrop(event) {
+      event.preventDefault();
+
+      lefttop.style.pointerEvents = 'stroke';
+      centertop.style.pointerEvents = 'stroke';
+      righttop.style.pointerEvents = 'stroke';
+
+      leftmiddle.style.pointerEvents = 'stroke';
+      centermiddle.style.pointerEvents = 'stroke';
+      rightmiddle.style.pointerEvents = 'stroke';
+
+      leftbottom.style.pointerEvents = 'stroke';
+      centerbottom.style.pointerEvents = 'stroke';
+      rightbottom.style.pointerEvents = 'stroke';
+
+    }
+    function drop(event) {
+      event.preventDefault();
+      event.target.appendChild(mascot);
+      mascot.style.pointerEvents = 'stroke';
+      lefttop.style.pointerEvents = 'none';
+      centertop.style.pointerEvents = 'none';
+      righttop.style.pointerEvents = 'none';
+
+      leftmiddle.style.pointerEvents = 'none';
+      centermiddle.style.pointerEvents = 'none';
+      rightmiddle.style.pointerEvents = 'none';
+
+      leftbottom.style.pointerEvents = 'none';
+      centerbottom.style.pointerEvents = 'none';
+      rightbottom.style.pointerEvents = 'none';
+      // if (mascot.parentElement.id == 'lefttop') {
+      //   mascot.style.pointerEvents = 'stroke';
+      //   lefttop.style.pointerEvents = 'none';
+      //   rightbottom.style.pointerEvents = 'none';
+      // }
+
+    }
+    function mouseclick(event) {
+      console.log('click');
+    }
+    mascot.addEventListener('click', mouseclick);
 
   </script>
 </body>

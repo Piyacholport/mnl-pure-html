@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Draggable Button</title>
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      background-color: black;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .draggable-button {
+      background: blue;
+      border: none;
+      text-decoration: none;
+      width: 100px;
+      height: 100px;
+      padding: 0px;
+      cursor: grab;
+      user-drag: none;
+      touch-action: none;
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: stroke;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto;
+      background-color: #2196F3;
+    }
+
+    .grid-item {
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      font-size: 30px;
+      text-align: center;
+      height: 50vh;
+      pointer-events: none;
+    }
+    #lefttop {
+      background-color: aqua;
+
+
+    }
+
+    #righttop {
+      background-color: brown;
+    }
+    #leftbottom {
+      background-color: darkorange;
+    }
+    #rightbottom {
+      background-color: lime;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="allcontent">
+    <div class="container grid-container">
+     
+    <div class="grid-item" id="lefttop">lefttop
+      <div class="divbutton" id="divbutton">
+        <button class="draggable-button" id="draggableButton">
+          <img src="./assets/img/edit.gif" alt="" style="width: 100px; height: 100px;" id="imgbtn">
+        </button>
+      </div>
+    </div>
+    <div class="grid-item" id="righttop">righttop</div>
+    <div class="grid-item" id="leftbottom">leftbottom</div>
+    <div class="grid-item" id="rightbottom">rightbottom
+
+    </div>
+   
+
+    </div>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Draggable Button</title>
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      background-color: black;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .draggable-button {
+      background: blue;
+      border: none;
+      text-decoration: none;
+      width: 100px;
+      height: 100px;
+      padding: 0px;
+      cursor: grab;
+      user-drag: none;
+      touch-action: none;
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: stroke;
+    }
+
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto;
+      background-color: #2196F3;
+    }
+
+    .grid-item {
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      font-size: 30px;
+      text-align: center;
+      height: 50vh;
+      pointer-events: none;
+    }
+
+    #lefttop {
+      background-color: aqua;
+
+
+    }
+
+    #righttop {
+      background-color: brown;
+
+    }
+
+    #leftbottom {
+      background-color: darkorange;
+
+    }
+
+    #rightbottom {
+      background-color: lime;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="allcontent">
+    <div class="container grid-container">
+     
+    <div class="grid-item" id="lefttop">lefttop</div>
+    <div class="grid-item" id="righttop">righttop</div>
+    <div class="grid-item" id="leftbottom">leftbottom</div>
+    <div class="grid-item" id="rightbottom">rightbottom</div>
+      <div class="divbutton" id="divbutton">
+        <button class="draggable-button" id="draggableButton">
+          <img src="./assets/img/edit.gif" alt="" style="width: 100px; height: 100px;" id="imgbtn">
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+  <script>
+
+  </script>
+  <script>
+    const draggableButton = document.getElementById('draggableButton');
+    const test = document.getElementById('lefttop');
+    let isDragging = false;
+    let offsetX, offsetY;
+
+
+
+    // ตำแหน่งเริ่มต้นของปุ่ม
+    const initialButtonPosition = { top: 'auto', bottom: '10px', left: 'auto', right: '10px' };
+
+    draggableButton.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      offsetX = e.clientX - draggableButton.getBoundingClientRect().left;
+      offsetY = e.clientY - draggableButton.getBoundingClientRect().top;
+      draggableButton.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        const container = document.querySelector('.container');
+        const maxX = container.clientWidth - draggableButton.clientWidth;
+        const maxY = container.clientHeight - draggableButton.clientHeight;
+        let x = e.clientX - container.getBoundingClientRect().left - offsetX;
+        let y = e.clientY - container.getBoundingClientRect().top - offsetY;
+
+        x = Math.min(maxX, Math.max(0, x));
+        y = Math.min(maxY, Math.max(0, y));
+
+        draggableButton.style.left = x + 'px';
+        draggableButton.style.top = y + 'px';
+      }
+
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      draggableButton.style.cursor = 'grab';
+
+      // ตรวจสอบการคลิกและไม่มีการลาก
+      //   if (isDragging) {
+      //     console.log('hello');
+      //     draggableButton.style.top = initialButtonPosition.top;
+      //     draggableButton.style.bottom = initialButtonPosition.bottom;
+      //     draggableButton.style.left = initialButtonPosition.left;
+      //     draggableButton.style.right = initialButtonPosition.right;
+      //     isDragging = false;
+      //   }
+    });
+
+    draggableButton.addEventListener('dragstart', (e) => {
+      e.preventDefault();
+    });
+
+    const divbtn = document.getElementById('divbutton');
+
+    function mouseclick(event) {
+      console.log('click', { x: event.clientX, y: event.clientY });
+    }
+
+    function mousemove(event) {
+      console.log('move', { x: event.clientX, y: event.clientY });
+    }
+
+
+    //  draggableButton.addEventListener('click',mouseclick);
+    //  draggableButton.addEventListener('mousemove',mousemove)
+
+  </script>
+</body>
+
+</html>
